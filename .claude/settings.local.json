@@ -3,7 +3,18 @@
     "allow": [
       "mcp__ide__executeCode",
       "Bash(python3 *)",
-      "Bash(npx create-next-app@latest *)"
+      "Bash(npx create-next-app@latest *)",
+      "Bash(npx next *)",
+      "Bash(npx tsc *)",
+      "WebFetch(domain:melissaambrosini.com)",
+      "WebSearch",
+      "WebFetch(domain:www.ciarafoy.com)",
+      "WebFetch(domain:nataliehealthcoach.com)",
+      "WebFetch(domain:www.healthcoachnatalie.com)",
+      "WebFetch(domain:thegoodalliance.org)",
+      "WebFetch(domain:www.nataliebrown.health)",
+      "WebFetch(domain:natalie-brown.com)",
+      "Bash(pip3 install *)"
     ]
   }
 }
