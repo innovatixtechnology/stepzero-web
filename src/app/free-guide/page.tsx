@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function FreeGuidePage() {
@@ -61,13 +62,19 @@ export default function FreeGuidePage() {
 
           {/* Right Column: Mockup */}
           <div className="md:w-[45%] flex justify-center sticky top-24">
-            <div className="w-full max-w-[300px] aspect-[3/4] bg-gradient-to-br from-[#C17B5C]/15 to-[#7A9E7E]/15 rounded-2xl flex items-center justify-center shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-              <div className="text-center p-8">
-                <div className="w-12 h-12 mx-auto mb-4 bg-[#F0B429]/20 rounded-full flex items-center justify-center">
-                  <span className="text-[#F0B429] text-2xl font-bold">↓</span>
-                </div>
-                <p className="font-[family-name:var(--font-playfair)] text-lg font-bold text-[#2C2C2C]">Gut Reset</p>
-                <p className="text-[#2C2C2C]/60 text-sm">Guide</p>
+            {/* Guide cover — guide-cover.png (600×750, 4:5) fills 3:4 container */}
+            <div className="relative w-full max-w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+              <Image
+                src="/images/guide-cover.png"
+                alt="Step Zero Gut Reset Guide"
+                fill
+                className="object-cover object-center"
+                sizes="300px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/60 via-transparent to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                <p className="font-[family-name:var(--font-playfair)] text-lg font-bold text-white drop-shadow">Gut Reset</p>
+                <p className="text-white/80 text-sm drop-shadow">Guide</p>
               </div>
             </div>
           </div>

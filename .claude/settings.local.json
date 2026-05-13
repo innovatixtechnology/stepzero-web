@@ -14,7 +14,8 @@
       "WebFetch(domain:thegoodalliance.org)",
       "WebFetch(domain:www.nataliebrown.health)",
       "WebFetch(domain:natalie-brown.com)",
-      "Bash(pip3 install *)"
+      "Bash(pip3 install *)",
+      "Bash(file *)"
     ]
   }
 }

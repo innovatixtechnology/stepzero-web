@@ -1,4 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
+
+const instagramImages = [
+  "/images/wide-1.jpg",
+  "/images/portrait-1.jpg",
+  "/images/wide-2.jpg",
+  "/images/portrait-2.jpg",
+  "/images/wide-3.jpg",
+  "/images/portrait-3.jpg",
+];
 
 export default function Home() {
   return (
@@ -18,35 +29,37 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16 max-w-[1400px] mx-auto">
             {/* Left: Copy */}
             <div className="lg:w-1/2 order-2 lg:order-1">
-              <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-5">
+              <p className="anim-fade-left text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-5">
                 Integrative Health Coaching
               </p>
-              <h1 className="font-[family-name:var(--font-playfair)] text-[28px] md:text-[48px] lg:text-[56px] leading-[1.08] font-bold text-[#2C2C2C] mb-6">
+              <h1 className="anim-fade-left anim-delay-100 font-[family-name:var(--font-playfair)] text-[28px] md:text-[48px] lg:text-[56px] leading-[1.08] font-bold text-[#2C2C2C] mb-6">
                 You&apos;ve tried the plans. Done the research. And your body
                 still doesn&apos;t feel right.
               </h1>
-              <p className="text-base md:text-lg text-[#2C2C2C]/70 leading-[1.7] mb-8 max-w-xl">
+              <p className="anim-fade-left anim-delay-200 text-base md:text-lg text-[#2C2C2C]/70 leading-[1.7] mb-8 max-w-xl">
                 You&apos;re not doing it wrong. You&apos;re starting at Step
                 One when you need to start at Step Zero.
               </p>
-              <p className="text-sm text-[#2C2C2C]/50 leading-[1.7] mb-10 max-w-lg">
+              <p className="anim-fade-left anim-delay-300 text-sm text-[#2C2C2C]/50 leading-[1.7] mb-10 max-w-lg">
                 I&apos;m Palasha, founder of Step Zero. After my own
                 gallbladder removal, postpartum recovery, and years of
                 figuring things out, I help people find the real starting
                 point for their health.
               </p>
-              <Link
-                href="/free-guide"
-                className="inline-flex items-center gap-2 bg-[#F0B429] text-white text-[15px] font-bold px-8 py-3.5 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm"
-              >
-                Download the Free Gut Health Guide
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
+              <div className="anim-fade-left anim-delay-400">
+                <Link
+                  href="/free-guide"
+                  className="inline-flex items-center gap-2 bg-[#F0B429] text-white text-[15px] font-bold px-8 py-3.5 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm"
+                >
+                  Download the Free Gut Health Guide
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </Link>
+              </div>
 
               {/* Social Proof */}
-              <div className="mt-14 pt-8 border-t border-[#2C2C2C]/[0.06]">
+              <div className="anim-fade-left anim-delay-500 mt-14 pt-8 border-t border-[#2C2C2C]/[0.06]">
                 <p className="text-[10px] tracking-[0.15em] uppercase text-[#2C2C2C]/30 mb-3">
                   As featured in
                 </p>
@@ -58,16 +71,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Right: Image */}
+            {/* Right: Image — aspect-[3/4] matches IMG_1000x1334 (1000:1334 ≈ 3:4) */}
             <div className="lg:w-1/2 order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-[450px] lg:max-w-[500px] aspect-[3/4]">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAF7F2] z-10 rounded-2xl" />
-                <div className="absolute inset-0 bg-gradient-to-br from-[#C17B5C]/[0.08] to-[#7A9E7E]/[0.06] rounded-2xl ring-1 ring-[#2C2C2C]/[0.04]" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#F0B429]/15 to-[#C17B5C]/10 flex items-center justify-center">
-                    <div className="w-4 h-4 rounded-full bg-[#F0B429]/30" />
-                  </div>
-                </div>
+              <div className="anim-fade-right anim-delay-200 relative w-full max-w-[450px] lg:max-w-[500px] aspect-[3/4] overflow-hidden rounded-2xl ring-1 ring-[#2C2C2C]/[0.04]">
+                <Image
+                  src="/images/hero-portrait.png"
+                  alt="Palasha – Integrative Health Coach, Step Zero"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                  sizes="(max-width: 1024px) 90vw, 500px"
+                />
+                {/* fade-to-background at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#FAF7F2]/70 z-10 rounded-2xl" />
               </div>
             </div>
           </div>
@@ -86,34 +102,36 @@ export default function Home() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-px bg-[#F0B429]/40" />
 
         <div className="max-w-[680px] mx-auto px-6 md:px-8">
-          <p className="text-sm text-[#7A9E7E] tracking-wide mb-8 font-medium">
-            Let me guess.
-          </p>
-
-          <div className="space-y-5 text-base md:text-[16px] text-[#2C2C2C]/80 leading-[1.8]">
-            <p>You eat relatively well. You&apos;re not completely sedentary.
-               You&apos;ve googled your symptoms, tried a few things, maybe even
-               seen a doctor who told you everything looks normal.</p>
-            <p className="font-medium text-[#2C2C2C]">But something still feels off.</p>
-            <p>Your digestion is unpredictable. Your energy crashes by afternoon.
-               The weight isn&apos;t moving despite your best efforts. You wake up
-               tired. Your gut feels like it has its own agenda.</p>
-            <p className="text-[#2C2C2C]/60 italic">Here&apos;s what nobody tells you: this isn&apos;t random. And
-               it&apos;s not in your head.</p>
-            <p>For most people living with these symptoms, the problem isn&apos;t
-               the food they&apos;re eating. It&apos;s that they&apos;ve skipped
-               the foundation entirely — and gone straight to solutions
-               that can&apos;t work without it.</p>
-          </div>
-
-          <div className="mt-12 pt-10 border-t border-[#2C2C2C]/[0.06]">
-            <p className="font-[family-name:var(--font-playfair)] text-xl md:text-[24px] italic text-[#F0B429] text-center leading-relaxed">
-              That&apos;s the step most health advice misses.
+          <AnimateOnScroll>
+            <p className="text-sm text-[#7A9E7E] tracking-wide mb-8 font-medium">
+              Let me guess.
             </p>
-            <p className="font-[family-name:var(--font-playfair)] text-2xl md:text-[32px] italic text-[#F0B429] text-center mt-3 font-semibold">
-              That&apos;s Step Zero.
-            </p>
-          </div>
+
+            <div className="space-y-5 text-base md:text-[16px] text-[#2C2C2C]/80 leading-[1.8]">
+              <p>You eat relatively well. You&apos;re not completely sedentary.
+                 You&apos;ve googled your symptoms, tried a few things, maybe even
+                 seen a doctor who told you everything looks normal.</p>
+              <p className="font-medium text-[#2C2C2C]">But something still feels off.</p>
+              <p>Your digestion is unpredictable. Your energy crashes by afternoon.
+                 The weight isn&apos;t moving despite your best efforts. You wake up
+                 tired. Your gut feels like it has its own agenda.</p>
+              <p className="text-[#2C2C2C]/60 italic">Here&apos;s what nobody tells you: this isn&apos;t random. And
+                 it&apos;s not in your head.</p>
+              <p>For most people living with these symptoms, the problem isn&apos;t
+                 the food they&apos;re eating. It&apos;s that they&apos;ve skipped
+                 the foundation entirely — and gone straight to solutions
+                 that can&apos;t work without it.</p>
+            </div>
+
+            <div className="mt-12 pt-10 border-t border-[#2C2C2C]/[0.06]">
+              <p className="font-[family-name:var(--font-playfair)] text-xl md:text-[24px] italic text-[#F0B429] text-center leading-relaxed">
+                That&apos;s the step most health advice misses.
+              </p>
+              <p className="font-[family-name:var(--font-playfair)] text-2xl md:text-[32px] italic text-[#F0B429] text-center mt-3 font-semibold">
+                That&apos;s Step Zero.
+              </p>
+            </div>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -128,7 +146,7 @@ export default function Home() {
 
         <div className="relative w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            <div className="md:w-[40%] text-center">
+            <AnimateOnScroll className="md:w-[40%] text-center">
               <p className="font-[family-name:var(--font-playfair)] text-[80px] md:text-[96px] font-bold text-[#F0B429] leading-none">
                 83%
               </p>
@@ -136,8 +154,8 @@ export default function Home() {
                 of Indian adults have at least one undiagnosed metabolic risk factor
               </p>
               <p className="text-[11px] text-white/50 mt-3 tracking-wide">Nature Medicine, 2025</p>
-            </div>
-            <div className="md:w-[60%]">
+            </AnimateOnScroll>
+            <AnimateOnScroll className="md:w-[60%]" delay={150}>
               <p className="text-base leading-[1.75] mb-5 text-white/95">
                 A landmark 2025 study of over 18,000 Indian adults found something striking: 83% had at least one metabolic risk factor — prediabetes, blood sugar imbalance, obesity, or high cholesterol — many completely undiagnosed.
               </p>
@@ -148,7 +166,7 @@ export default function Home() {
                 This isn&apos;t about blame. It&apos;s about context. The food we grew up eating, the stress we carry, the sleep we sacrifice — all of it accumulates. At some point, the body stops compensating.
               </p>
               <p className="text-base leading-[1.75] font-medium text-white">That point is exactly where Step Zero begins.</p>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -158,23 +176,25 @@ export default function Home() {
           =================================================================== */}
       <section className="bg-[#FAF7F2] py-20 md:py-28">
         <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
+          <AnimateOnScroll className="text-center mb-16">
             <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Our Approach</p>
             <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-[#2C2C2C]">The Step Zero Difference</h2>
             <div className="w-14 h-px bg-[#F0B429] mx-auto mt-5" />
-          </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { title: "We find the root", body: "Not the symptom. Every protocol starts with understanding your specific history — what your body has been through and what it actually needs now." },
               { title: "Science meets experience", body: "Integrative nutrition, functional medicine, and yoga philosophy — combined with the real-world understanding of someone who has lived the journey." },
               { title: "Sustainable over dramatic", body: "No 21-day cleanses. No elimination diets that leave you miserable. Real food, real life, real changes that hold." },
-            ].map((card) => (
-              <div key={card.title} className="group bg-white rounded-xl p-8 border border-[#2C2C2C]/[0.04] hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#F0B429] mb-6" />
-                <h3 className="text-lg font-semibold text-[#2C2C2C] mb-3">{card.title}</h3>
-                <p className="text-sm text-[#2C2C2C]/65 leading-[1.75]">{card.body}</p>
-              </div>
+            ].map((card, i) => (
+              <AnimateOnScroll key={card.title} delay={i * 100}>
+                <div className="group bg-white rounded-xl p-8 border border-[#2C2C2C]/[0.04] hover:shadow-[0_8px_30px_rgba(0,0,0,0.05)] transition-[box-shadow,transform] duration-300 hover:-translate-y-0.5 h-full">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#F0B429] mb-6" />
+                  <h3 className="text-lg font-semibold text-[#2C2C2C] mb-3">{card.title}</h3>
+                  <p className="text-sm text-[#2C2C2C]/65 leading-[1.75]">{card.body}</p>
+                </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -185,9 +205,11 @@ export default function Home() {
           =================================================================== */}
       <section className="bg-[#FAF7F2] py-20 md:py-28">
         <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto text-center">
-          <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Getting Started</p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-[#2C2C2C] mb-4">Simpler than you think</h2>
-          <div className="w-14 h-px bg-[#F0B429] mx-auto mb-16" />
+          <AnimateOnScroll>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Getting Started</p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-[#2C2C2C] mb-4">Simpler than you think</h2>
+            <div className="w-14 h-px bg-[#F0B429] mx-auto mb-16" />
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
             {[
@@ -195,19 +217,21 @@ export default function Home() {
               { num: "02", title: "Book a Clarity Call", body: "A focused 60-minute consultation where we look at your situation and map out where to begin. You leave with a clear action plan — whether you continue or not." },
               { num: "03", title: "Begin the Work", body: "For those ready to go deeper, the Signature Programme is a three-month coaching relationship — personalised to your history, your body, and your life." },
             ].map((step, index) => (
-              <div key={step.num} className="relative">
+              <AnimateOnScroll key={step.num} delay={index * 120} className="relative">
                 <p className="font-[family-name:var(--font-playfair)] text-[64px] font-bold text-[#F0B429]/15 leading-none mb-4">{step.num}</p>
                 <h3 className="text-base font-semibold text-[#2C2C2C] mb-2">{step.title}</h3>
                 <p className="text-sm text-[#2C2C2C]/60 leading-[1.75]">{step.body}</p>
                 {index < 2 && <div className="hidden md:block absolute top-8 right-0 w-px h-32 bg-[#2C2C2C]/[0.04]" />}
-              </div>
+              </AnimateOnScroll>
             ))}
           </div>
 
-          <Link href="/free-guide" className="inline-flex items-center gap-2 mt-14 bg-[#F0B429] text-white text-[15px] font-bold px-8 py-3.5 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm">
-            Download the Free Guide
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </Link>
+          <AnimateOnScroll delay={200}>
+            <Link href="/free-guide" className="inline-flex items-center gap-2 mt-14 bg-[#F0B429] text-white text-[15px] font-bold px-8 py-3.5 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm">
+              Download the Free Guide
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </Link>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -216,37 +240,39 @@ export default function Home() {
           =================================================================== */}
       <section className="bg-[#F0F5F0] py-20 md:py-28">
         <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
+          <AnimateOnScroll className="text-center mb-16">
             <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Client Stories</p>
             <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-[#2C2C2C]">What people say</h2>
             <div className="w-14 h-px bg-[#F0B429] mx-auto mt-5" />
-          </div>
+          </AnimateOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { quote: "I spent years going from doctor to doctor. Palasha was the first person who explained what was actually happening in my body — and gave me a plan that fit my life.", name: "Ananya", desc: "Mumbai, post-surgery recovery" },
               { quote: "The clarity call alone changed how I think about my health. I finally understand why nothing worked before — because I was skipping the foundation.", name: "Priya", desc: "Bangalore, working professional" },
               { quote: "Three months in the programme and my digestion, energy, and sleep have all improved. It's not just about food — it's about understanding your body.", name: "Meera", desc: "Delhi, postpartum recovery" },
-            ].map((t) => (
-              <div key={t.name} className="bg-white rounded-xl p-8 border-t-2 border-[#F0B429]">
-                <div className="flex gap-1 mb-5">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <svg key={s} width="16" height="16" viewBox="0 0 16 16" fill="none">
-                      <path d="M8 1L9.6 5.6H14.4L10.4 8.6L11.6 12.6L8 10L4.4 12.6L5.6 8.6L1.6 5.6H6.4L8 1Z" fill="#F0B429" fillOpacity="0.6" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-[15px] italic text-[#2C2C2C]/75 leading-[1.8] mb-6">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#F0B429]/10 flex items-center justify-center">
-                    <span className="text-[#F0B429] text-xs font-bold">{t.name[0]}</span>
+            ].map((t, i) => (
+              <AnimateOnScroll key={t.name} delay={i * 100}>
+                <div className="bg-white rounded-xl p-8 border-t-2 border-[#F0B429] h-full">
+                  <div className="flex gap-1 mb-5">
+                    {[1, 2, 3, 4, 5].map((s) => (
+                      <svg key={s} width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 1L9.6 5.6H14.4L10.4 8.6L11.6 12.6L8 10L4.4 12.6L5.6 8.6L1.6 5.6H6.4L8 1Z" fill="#F0B429" fillOpacity="0.6" />
+                      </svg>
+                    ))}
                   </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[#2C2C2C]">{t.name}</p>
-                    <p className="text-xs text-[#2C2C2C]/40">{t.desc}</p>
+                  <p className="text-[15px] italic text-[#2C2C2C]/75 leading-[1.8] mb-6">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-[#F0B429]/10 flex items-center justify-center">
+                      <span className="text-[#F0B429] text-xs font-bold">{t.name[0]}</span>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-[#2C2C2C]">{t.name}</p>
+                      <p className="text-xs text-[#2C2C2C]/40">{t.desc}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimateOnScroll>
             ))}
           </div>
         </div>
@@ -262,7 +288,7 @@ export default function Home() {
 
         <div className="relative w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-[60%]">
+            <AnimateOnScroll className="md:w-[60%]">
               <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-white mb-6 leading-snug">Not ready to book yet? Start here.</h2>
               <p className="text-base text-white/85 leading-[1.75] mb-10">
                 The Step Zero Gut Reset Guide is free — and it&apos;s the most useful place to begin. Five foundational fixes, rooted in integrative nutrition and functional medicine, written for real Indian lives.
@@ -271,18 +297,25 @@ export default function Home() {
                 Send Me the Free Guide
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </Link>
-            </div>
-            <div className="md:w-[40%] flex justify-center">
-              <div className="w-full max-w-[240px] aspect-[3/4] bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/15">
-                <div className="text-center p-8">
-                  <div className="w-14 h-14 mx-auto mb-5 bg-white/10 rounded-full flex items-center justify-center">
-                    <svg width="20" height="20" viewBox="0 0 16 16" fill="none"><path d="M8 1V12M8 12L4 8M8 12L12 8" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.6" /></svg>
-                  </div>
-                  <p className="text-white font-[family-name:var(--font-playfair)] text-base font-bold">Gut Reset</p>
-                  <p className="text-white/70 text-sm">Guide</p>
+            </AnimateOnScroll>
+
+            {/* Guide cover — IMG_600x750 is 4:5; shown in a 3:4 container with object-cover */}
+            <AnimateOnScroll className="md:w-[40%] flex justify-center" delay={150}>
+              <div className="relative w-full max-w-[220px] aspect-[3/4] rounded-2xl overflow-hidden shadow-xl">
+                <Image
+                  src="/images/guide-cover.png"
+                  alt="Step Zero Gut Reset Guide cover"
+                  fill
+                  className="object-cover object-center"
+                  sizes="220px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/60 via-transparent to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-center">
+                  <p className="text-white font-[family-name:var(--font-playfair)] text-base font-bold drop-shadow">Gut Reset</p>
+                  <p className="text-white/80 text-sm drop-shadow">Guide</p>
                 </div>
               </div>
-            </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>
@@ -292,13 +325,25 @@ export default function Home() {
           =================================================================== */}
       <section className="bg-[#FAF7F2] py-20 md:py-28">
         <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto text-center">
-          <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Daily Insights</p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-xl md:text-[24px] font-bold text-[#2C2C2C] mb-4">Come find me on Instagram</h2>
-          <p className="text-sm text-[#2C2C2C]/50 max-w-md mx-auto leading-[1.7] mb-10">Gut health insights, real food ideas, and the science behind why your body does what it does.</p>
+          <AnimateOnScroll>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">Daily Insights</p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-xl md:text-[24px] font-bold text-[#2C2C2C] mb-4">Come find me on Instagram</h2>
+            <p className="text-sm text-[#2C2C2C]/50 max-w-md mx-auto leading-[1.7] mb-10">Gut health insights, real food ideas, and the science behind why your body does what it does.</p>
+          </AnimateOnScroll>
 
+          {/* Instagram grid — square crop all images with hover scale */}
           <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-3 max-w-3xl mx-auto">
-            {Array.from({ length: 6 }).map((_, i) => (
-              <div key={i} className={`aspect-square rounded-lg ${i % 2 === 0 ? "bg-[#C17B5C]/8" : "bg-[#7A9E7E]/8"}`} />
+            {instagramImages.map((src, i) => (
+              <div key={i} className="relative aspect-square rounded-lg overflow-hidden group">
+                <Image
+                  src={src}
+                  alt=""
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 33vw, 150px"
+                />
+                <div className="absolute inset-0 bg-[#2C2C2C]/0 group-hover:bg-[#2C2C2C]/20 transition-colors duration-300" />
+              </div>
             ))}
           </div>
 

@@ -1,12 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
+import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 export default function AboutPage() {
   return (
     <>
       {/* Section 5.1: Page Hero */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden bg-[#2C2C2C]">
+        {/* Background image — 1400x787 wide landscape */}
+        <Image
+          src="/images/wide-1.jpg"
+          alt=""
+          fill
+          className="object-cover object-center"
+          priority
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-[#2C2C2C]/70 to-transparent z-10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#7A9E7E]/20 to-[#C17B5C]/20 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#7A9E7E]/20 to-[#C17B5C]/20 z-10" />
         <div className="relative z-20 w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto pb-12">
           <div className="flex flex-col md:flex-row items-end justify-between gap-4">
             <div className="md:w-2/3">
@@ -22,14 +33,16 @@ export default function AboutPage() {
       {/* Section 5.2: The Hook */}
       <section className="bg-[#FAF7F2] py-16 md:py-20">
         <div className="max-w-[720px] mx-auto px-6 md:px-8 text-center">
-          <div className="w-12 h-px bg-[#F0B429] mx-auto mb-8" />
-          <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[32px] font-bold text-[#2C2C2C] mb-8 leading-snug">
-            I didn&apos;t find my way to health coaching through a textbook.
-          </h2>
-          <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">Nobody prepares you for what happens after the surgery.</p>
-          <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">
-            After my gallbladder was removed, I did what most people do — I followed the doctor&apos;s advice, ate &apos;carefully,&apos; and waited to feel normal again. But normal didn&apos;t come. My digestion was unpredictable. My energy was inconsistent. And every time I asked for help, I got the same generic response: &quot;This is expected. Give it time. Avoid fatty foods.&quot;
-          </p>
+          <AnimateOnScroll>
+            <div className="w-12 h-px bg-[#F0B429] mx-auto mb-8" />
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[32px] font-bold text-[#2C2C2C] mb-8 leading-snug">
+              I didn&apos;t find my way to health coaching through a textbook.
+            </h2>
+            <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">Nobody prepares you for what happens after the surgery.</p>
+            <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">
+              After my gallbladder was removed, I did what most people do — I followed the doctor&apos;s advice, ate &apos;carefully,&apos; and waited to feel normal again. But normal didn&apos;t come. My digestion was unpredictable. My energy was inconsistent. And every time I asked for help, I got the same generic response: &quot;This is expected. Give it time. Avoid fatty foods.&quot;
+            </p>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -37,15 +50,25 @@ export default function AboutPage() {
       <section className="bg-[#FAF7F2] py-8 md:py-16">
         <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-[55%]">
+            <AnimateOnScroll className="md:w-[55%]">
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">Then came my second pregnancy and postpartum recovery. Different situation, same pattern.</p>
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">A body going through something significant. A system handing out generic protocols. And me — someone who by this point had studied nutrition formally, held a certification from IIN, was deep into understanding integrative health — still struggling to find guidance that actually fit my life.</p>
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">That&apos;s when something clicked.</p>
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8]">It wasn&apos;t that the advice was wrong. It was that it was built for the average person in an average situation. And most of us aren&apos;t that.</p>
-            </div>
-            <div className="md:w-[45%]">
-              <div className="w-full aspect-[4/5] max-w-[400px] bg-gradient-to-br from-[#C17B5C]/15 to-[#7A9E7E]/15 rounded-2xl mx-auto" />
-            </div>
+            </AnimateOnScroll>
+            {/* About portrait — IMG_800x1066 (800:1066 ≈ 3:4); displayed in 4:5 container with object-cover */}
+            <AnimateOnScroll className="md:w-[45%]" delay={150}>
+              <div className="relative w-full aspect-[4/5] max-w-[400px] mx-auto rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/about-portrait.png"
+                  alt="Palasha, Integrative Health Coach"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 90vw, 400px"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2]/30 via-transparent to-transparent" />
+              </div>
+            </AnimateOnScroll>
           </div>
         </div>
       </section>

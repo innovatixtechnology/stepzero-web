@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -66,7 +67,17 @@ export default function ContactPage() {
 
           {/* Right Column: Photo + Quick Links */}
           <div className="md:w-[45%]">
-            <div className="w-full aspect-[4/5] max-w-[400px] bg-gradient-to-br from-[#C17B5C]/15 to-[#7A9E7E]/15 rounded-2xl mx-auto mb-8" />
+            {/* Portrait photo — portrait-3.jpg (432×768, 9:16) fills 4:5 container */}
+            <div className="relative w-full aspect-[4/5] max-w-[400px] mx-auto mb-8 rounded-2xl overflow-hidden">
+              <Image
+                src="/images/portrait-3.jpg"
+                alt="Palasha – Integrative Health Coach"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 90vw, 400px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2]/30 via-transparent to-transparent" />
+            </div>
             <div className="space-y-4 max-w-[400px] mx-auto">
               <Link href="/free-guide" className="block bg-white rounded-lg p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow border border-[#2C2C2C]/5">
                 <p className="text-sm font-semibold text-[#2C2C2C] mb-1">📥 Download the free guide</p>
