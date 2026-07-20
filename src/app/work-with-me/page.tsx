@@ -42,13 +42,7 @@ export default function WorkWithMePage() {
               ))}
             </ul>
 
-            <div className="bg-[#FAF7F2] rounded-lg p-5 mb-8">
-              <p className="text-[15px] text-[#2C2C2C]/80"><strong>India:</strong> Starting from ₹8,000/month</p>
-              <p className="text-[15px] text-[#2C2C2C]/80"><strong>International:</strong> Starting from $150 USD/month</p>
-              <p className="text-xs text-[#2C2C2C]/60 mt-2">Minimum 3-month commitment. Monthly instalments.</p>
-            </div>
-
-            <Link href="/contact" className="block w-full text-center bg-[#F0B429] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm">Apply for the Signature Programme &rarr;</Link>
+            <Link href="/contact" className="block w-full text-center bg-[#F0B429] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#d9a123] transition-colors shadow-sm">Apply to Work Together &rarr;</Link>
           </div>
         </div>
       </section>
@@ -69,12 +63,7 @@ export default function WorkWithMePage() {
             <p className="text-base text-[#2C2C2C]/70 mb-4">Single 60-Minute Consultation</p>
             <p className="text-[15px] text-[#2C2C2C]/80 leading-[1.7] mb-8">For people who want expert eyes on their situation before committing to a programme. This is not a sales call. It&apos;s a working session.</p>
 
-            <div className="bg-[#FAF7F2] rounded-lg p-5 mb-8">
-              <p className="text-[15px] text-[#2C2C2C]/80"><strong>India:</strong> ₹2,500</p>
-              <p className="text-[15px] text-[#2C2C2C]/80"><strong>International:</strong> $60 USD</p>
-            </div>
-
-            <Link href="/contact" className="block w-full text-center bg-[#7A9E7E] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#6b8f6f] transition-colors shadow-sm">Book a Clarity Call &rarr;</Link>
+            <Link href="/contact" className="block w-full text-center bg-[#7A9E7E] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#6b8f6f] transition-colors shadow-sm">Book a Discovery Call &rarr;</Link>
           </div>
         </div>
       </section>

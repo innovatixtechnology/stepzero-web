@@ -3,12 +3,12 @@ import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const instagramImages = [
-  "/images/wide-1.jpg",
-  "/images/portrait-1.jpg",
-  "/images/wide-2.jpg",
-  "/images/portrait-2.jpg",
-  "/images/wide-3.jpg",
-  "/images/portrait-3.jpg",
+  "/images/website/4.jpg",
+  "/images/website/10.jpg",
+  "/images/website/7a.jpg",
+  "/images/website/13a.jpg",
+  "/images/website/1.jpg",
+  "/images/website/18.jpg",
 ];
 
 export default function Home() {
@@ -33,12 +33,12 @@ export default function Home() {
                 Integrative Health Coaching
               </p>
               <h1 className="anim-fade-left anim-delay-100 font-[family-name:var(--font-playfair)] text-[28px] md:text-[48px] lg:text-[56px] leading-[1.08] font-bold text-[#2C2C2C] mb-6">
-                You&apos;ve tried the plans. Done the research. And your body
-                still doesn&apos;t feel right.
+                Understand Your Body. Transform Your Health.
               </h1>
               <p className="anim-fade-left anim-delay-200 text-base md:text-lg text-[#2C2C2C]/70 leading-[1.7] mb-8 max-w-xl">
-                You&apos;re not doing it wrong. You&apos;re starting at Step
-                One when you need to start at Step Zero.
+                Evidence-based nutrition, gut health and lifestyle medicine to
+                help you uncover the root causes behind symptoms, build
+                sustainable habits and create lasting health.
               </p>
               <p className="anim-fade-left anim-delay-300 text-sm text-[#2C2C2C]/50 leading-[1.7] mb-10 max-w-lg">
                 I&apos;m Palasha, founder of Step Zero. After my own
@@ -61,10 +61,10 @@ export default function Home() {
               {/* Social Proof */}
               <div className="anim-fade-left anim-delay-500 mt-14 pt-8 border-t border-[#2C2C2C]/[0.06]">
                 <p className="text-[10px] tracking-[0.15em] uppercase text-[#2C2C2C]/30 mb-3">
-                  As featured in
+                  Credentials &amp; approach
                 </p>
-                <div className="flex items-center gap-8">
-                  {["IIN", "IGMPI", "AIC", "Sivananda"].map((org) => (
+                <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+                  {["IIN", "IGMPI", "AIC", "Sivananda", "Evidence-Based Health Education"].map((org) => (
                     <span key={org} className="text-sm font-semibold text-[#2C2C2C]/20 tracking-wide">{org}</span>
                   ))}
                 </div>
@@ -75,11 +75,11 @@ export default function Home() {
             <div className="lg:w-1/2 order-1 lg:order-2 flex justify-center lg:justify-end">
               <div className="anim-fade-right anim-delay-200 relative w-full max-w-[450px] lg:max-w-[500px] aspect-[3/4] overflow-hidden rounded-2xl ring-1 ring-[#2C2C2C]/[0.04]">
                 <Image
-                  src="/images/hero-portrait.png"
-                  alt="Palasha – Integrative Health Coach, Step Zero"
+                  src="/images/website/2a.jpg"
+                  alt="Palasha, Integrative Health Coach and founder of Step Zero"
                   fill
                   className="object-cover object-top"
-                  priority
+                  preload
                   sizes="(max-width: 1024px) 90vw, 500px"
                 />
                 {/* fade-to-background at bottom */}
@@ -135,8 +135,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#EEF3EE] py-20 md:py-28">
+        <div className="max-w-[760px] mx-auto px-6 md:px-8 text-center">
+          <AnimateOnScroll>
+            <p className="text-xs tracking-[0.15em] uppercase text-[#7A9E7E] font-medium mb-3">The foundation</p>
+            <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold text-[#2C2C2C] mb-10">What is Step Zero?</h2>
+            <div className="space-y-6 text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8]">
+              <p>Most health advice starts with a solution.</p>
+              <p className="font-[family-name:var(--font-playfair)] text-xl text-[#F0B429]">A diet. A supplement. A workout plan.</p>
+              <p>We believe health starts earlier.</p>
+              <p className="font-semibold text-[#2C2C2C]">It starts with understanding.</p>
+              <p>Understanding your symptoms. Understanding your digestion.<br />Understanding your lifestyle. Understanding your body.</p>
+              <p>Because when you understand the foundation, every other step becomes easier.</p>
+              <p className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl italic text-[#F0B429]">That&apos;s why we&apos;re called Step Zero.</p>
+            </div>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* ===================================================================
-          SECTION 3: INDIA REALITY — Data Meets Story
+          SECTION 3: WHY MODERN HEALTH FEELS CONFUSING
           =================================================================== */}
       <section className="bg-[#7A9E7E] text-white py-20 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.06]">
@@ -146,26 +164,23 @@ export default function Home() {
 
         <div className="relative w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-            <AnimateOnScroll className="md:w-[40%] text-center">
-              <p className="font-[family-name:var(--font-playfair)] text-[80px] md:text-[96px] font-bold text-[#F0B429] leading-none">
-                83%
-              </p>
-              <p className="text-sm italic mt-5 leading-relaxed max-w-xs mx-auto text-white/90">
-                of Indian adults have at least one undiagnosed metabolic risk factor
-              </p>
-              <p className="text-[11px] text-white/50 mt-3 tracking-wide">Nature Medicine, 2025</p>
+            <AnimateOnScroll className="md:w-[42%]">
+              <div className="relative w-full aspect-[4/5] max-w-[420px] mx-auto rounded-2xl overflow-hidden">
+                <Image src="/images/website/13a.jpg" alt="A calm, whole-person approach to health" fill className="object-cover" sizes="(max-width: 768px) 90vw, 420px" />
+              </div>
             </AnimateOnScroll>
-            <AnimateOnScroll className="md:w-[60%]" delay={150}>
+            <AnimateOnScroll className="md:w-[58%]" delay={150}>
+              <h2 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[34px] font-bold mb-8">Why Modern Health Feels So Confusing</h2>
               <p className="text-base leading-[1.75] mb-5 text-white/95">
-                A landmark 2025 study of over 18,000 Indian adults found something striking: 83% had at least one metabolic risk factor — prediabetes, blood sugar imbalance, obesity, or high cholesterol — many completely undiagnosed.
+                Today we have access to more health information than ever before. Yet many people still struggle with bloating, fatigue, poor digestion, inflammation and stubborn weight.
               </p>
               <p className="text-base leading-[1.75] mb-5 text-white/95">
-                The same study found that Indian diets, despite being considered &apos;healthy&apos; by cultural standards, are among the highest carbohydrate diets in the world — with protein intake significantly below what the body needs.
+                Not because they lack motivation. But because health advice is often fragmented.
               </p>
               <p className="text-base leading-[1.75] mb-5 text-white/80">
-                This isn&apos;t about blame. It&apos;s about context. The food we grew up eating, the stress we carry, the sleep we sacrifice — all of it accumulates. At some point, the body stops compensating.
+                Nutrition is discussed separately from sleep. Gut health is discussed separately from stress. Exercise is discussed separately from recovery.
               </p>
-              <p className="text-base leading-[1.75] font-medium text-white">That point is exactly where Step Zero begins.</p>
+              <p className="text-base leading-[1.75] font-medium text-white">At Step Zero, we look at the whole picture because your body works as one connected system—not as isolated symptoms.</p>
             </AnimateOnScroll>
           </div>
         </div>
@@ -184,7 +199,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "We find the root", body: "Not the symptom. Every protocol starts with understanding your specific history — what your body has been through and what it actually needs now." },
+              { title: "We Simplify the Science", body: "We break down complex health concepts into practical, easy-to-understand guidance so you know exactly what's happening inside your body." },
               { title: "Science meets experience", body: "Integrative nutrition, functional medicine, and yoga philosophy — combined with the real-world understanding of someone who has lived the journey." },
               { title: "Sustainable over dramatic", body: "No 21-day cleanses. No elimination diets that leave you miserable. Real food, real life, real changes that hold." },
             ].map((card, i) => (

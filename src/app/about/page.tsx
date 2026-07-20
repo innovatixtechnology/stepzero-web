@@ -9,11 +9,11 @@ export default function AboutPage() {
       <section className="relative h-[50vh] md:h-[60vh] flex items-end overflow-hidden bg-[#2C2C2C]">
         {/* Background image — 1400x787 wide landscape */}
         <Image
-          src="/images/wide-1.jpg"
+          src="/images/website/4.jpg"
           alt=""
           fill
           className="object-cover object-center"
-          priority
+          preload
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C] via-[#2C2C2C]/70 to-transparent z-10" />
@@ -55,12 +55,13 @@ export default function AboutPage() {
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">A body going through something significant. A system handing out generic protocols. And me — someone who by this point had studied nutrition formally, held a certification from IIN, was deep into understanding integrative health — still struggling to find guidance that actually fit my life.</p>
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mb-6">That&apos;s when something clicked.</p>
               <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8]">It wasn&apos;t that the advice was wrong. It was that it was built for the average person in an average situation. And most of us aren&apos;t that.</p>
+              <p className="text-base md:text-[17px] text-[#2C2C2C]/80 leading-[1.8] mt-6">That experience changed the way I looked at health forever. I realised that most people don&apos;t need more information—they need someone to connect the dots. That&apos;s what Step Zero is built to do: simplify the science, explain the &ldquo;why&rdquo; behind symptoms, and help people build lasting health through practical, sustainable change.</p>
             </AnimateOnScroll>
             {/* About portrait — IMG_800x1066 (800:1066 ≈ 3:4); displayed in 4:5 container with object-cover */}
             <AnimateOnScroll className="md:w-[45%]" delay={150}>
               <div className="relative w-full aspect-[4/5] max-w-[400px] mx-auto rounded-2xl overflow-hidden">
                 <Image
-                  src="/images/about-portrait.png"
+                  src="/images/website/11.jpg"
                   alt="Palasha, Integrative Health Coach"
                   fill
                   className="object-cover object-top"
@@ -125,6 +126,11 @@ export default function AboutPage() {
               "People experiencing symptoms driven by nervous system dysregulation",
               "Hormonal imbalance — PCOS, thyroid, perimenopause",
               "High-protein dieters who are eating right but not absorbing properly",
+              "People dealing with chronic inflammation",
+              "Adults looking to prevent future lifestyle diseases through sustainable habits",
+              "Adults who want to better understand their health—not just treat symptoms",
+              "Busy professionals struggling with stress-related health concerns",
+              "Adults focused on healthy ageing and longevity",
             ].map((item) => (
               <div key={item} className="flex items-start gap-3">
                 <span className="text-[#7A9E7E] mt-1 text-sm">•</span>
