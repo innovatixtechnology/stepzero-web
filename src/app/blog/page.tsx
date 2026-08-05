@@ -14,9 +14,9 @@ export default function BlogPage() {
   return (
     <section className="bg-[#FAF7F2] pt-24 md:pt-32 pb-16 md:pb-20">
       <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
-        <div className="text-center mb-16">
+        <div className="mb-16 max-w-2xl">
           <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-[44px] font-bold text-[#2C2C2C] mb-4">Blog</h1>
-          <p className="text-base text-[#2C2C2C]/70 max-w-2xl mx-auto leading-[1.7]">Science-backed insights on gut health, metabolic health, and integrative nutrition — written for real Indian lives.</p>
+          <p className="text-base text-[#2C2C2C]/70 leading-[1.7]">Clear, science-backed health insights for real Indian lives.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

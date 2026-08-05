@@ -5,13 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    location: "",
-    topic: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", location: "", topic: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -23,77 +17,76 @@ export default function ContactPage() {
     setFormData({ name: "", email: "", location: "", topic: "", message: "" });
   };
 
-  return (
-    <section className="bg-[#FAF7F2] pt-24 md:pt-32 pb-16 md:pb-20">
-      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row gap-12">
-          {/* Left Column: Form */}
-          <div className="md:w-[55%]">
-            <div className="w-12 h-px bg-[#F0B429] mb-6" />
-            <h1 className="font-[family-name:var(--font-playfair)] text-3xl md:text-[44px] font-bold text-[#2C2C2C] mb-6">Let&apos;s talk.</h1>
-            <p className="text-base text-[#2C2C2C]/80 leading-[1.7] max-w-md mb-10">
-              I read every message personally. If you&apos;re unsure where to start, the best first step is usually the free Gut Health Guide — it gives you a real sense of how I work. If you&apos;re ready to talk, fill in the form below.
-            </p>
+  const fieldClass = "w-full border border-[#607E64]/25 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] bg-[#FFFDFC]";
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#2C2C2C] mb-2">Name <span className="text-[#F0B429]">*</span></label>
-                <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className="w-full border border-[#7A9E7E]/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white" />
+  return (
+    <section className="bg-[#F8F3EB] pt-24 md:pt-32 pb-20 md:pb-28">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <p className="text-[11px] tracking-[0.18em] uppercase text-[#607E64] font-semibold mb-5">Contact</p>
+            <h1 className="text-[42px] md:text-[62px] leading-none font-semibold text-[#252A26] mb-6">Let&apos;s talk.</h1>
+            <p className="text-lg text-[#3E453F]/68 leading-[1.75] max-w-xl mb-9">Not sure where to start? Try the free Gut Health Guide, or send a message when you are ready to talk.</p>
+
+            <form onSubmit={handleSubmit} className="rounded-[28px] bg-white p-6 md:p-9 shadow-[0_25px_60px_rgba(44,44,44,.07)] space-y-5">
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-[#252A26] mb-2">Name <span className="text-[#C17B5C]">*</span></label>
+                  <input type="text" id="name" name="name" required value={formData.name} onChange={handleChange} className={fieldClass} />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-[#252A26] mb-2">Email <span className="text-[#C17B5C]">*</span></label>
+                  <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className={fieldClass} />
+                </div>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="location" className="block text-sm font-semibold text-[#252A26] mb-2">Where are you based?</label>
+                  <select id="location" name="location" value={formData.location} onChange={handleChange} className={fieldClass}>
+                    <option value="">Select</option><option value="india">India</option><option value="outside">Outside India</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="topic" className="block text-sm font-semibold text-[#252A26] mb-2">What brings you here?</label>
+                  <select id="topic" name="topic" value={formData.topic} onChange={handleChange} className={fieldClass}>
+                    <option value="">Select</option><option value="coaching">1:1 Coaching</option><option value="clarity">Clarity Call</option><option value="general">General Question</option><option value="media">Media & Collaboration</option>
+                  </select>
+                </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#2C2C2C] mb-2">Email <span className="text-[#F0B429]">*</span></label>
-                <input type="email" id="email" name="email" required value={formData.email} onChange={handleChange} className="w-full border border-[#7A9E7E]/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white" />
+                <label htmlFor="message" className="block text-sm font-semibold text-[#252A26] mb-2">Tell me a little about what you&apos;re dealing with</label>
+                <textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} className={`${fieldClass} resize-none`} />
               </div>
-              <div>
-                <label htmlFor="location" className="block text-sm font-medium text-[#2C2C2C] mb-2">Where are you based?</label>
-                <select id="location" name="location" value={formData.location} onChange={handleChange} className="w-full border border-[#7A9E7E]/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white">
-                  <option value="">Select</option><option value="india">India</option><option value="outside">Outside India</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="topic" className="block text-sm font-medium text-[#2C2C2C] mb-2">What brings you here?</label>
-                <select id="topic" name="topic" value={formData.topic} onChange={handleChange} className="w-full border border-[#7A9E7E]/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white">
-                  <option value="">Select</option><option value="coaching">1:1 Coaching</option><option value="clarity">Clarity Call</option><option value="general">General Question</option><option value="media">Media & Collaboration</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#2C2C2C] mb-2">Tell me a little about what you&apos;re dealing with</label>
-                <textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} className="w-full border border-[#7A9E7E]/30 rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white resize-none" />
-              </div>
-              <button type="submit" className="w-full bg-[#C17B5C] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#a8694d] transition-colors">Send my message &rarr;</button>
+              <button type="submit" className="w-full rounded-full bg-[#C17B5C] text-white text-sm font-bold px-7 py-4 hover:bg-[#a8694d] transition-colors">Send my message →</button>
             </form>
-            <p className="text-xs italic text-[#7A9E7E] mt-4">I typically respond within 48 hours on weekdays.</p>
+            <p className="text-xs text-[#607E64] mt-4">I typically respond within 48 hours on weekdays.</p>
           </div>
 
-          {/* Right Column: Photo + Quick Links */}
-          <div className="md:w-[45%]">
-            {/* Portrait photo — portrait-3.jpg (432×768, 9:16) fills 4:5 container */}
-            <div className="relative w-full aspect-[4/5] max-w-[400px] mx-auto mb-8 rounded-2xl overflow-hidden">
-              <Image
-                src="/images/portrait-3.jpg"
-                alt="Palasha – Integrative Health Coach"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 768px) 90vw, 400px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#FAF7F2]/30 via-transparent to-transparent" />
+          <div className="w-full lg:sticky lg:top-28">
+            <div className="relative w-full max-w-[540px] aspect-[7/10] mx-auto rounded-[30px] overflow-hidden shadow-[0_30px_70px_rgba(44,44,44,.14)]">
+              <Image src="/images/website/10.jpg" alt="Palasha, Integrative Health Coach" fill className="object-cover" preload sizes="(max-width:1024px) 90vw, 540px" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/65 via-transparent to-transparent" />
+              <div className="absolute left-7 right-7 bottom-7 text-white">
+                <p className="text-[10px] uppercase tracking-[0.16em] text-[#F0B429] font-semibold mb-2">A human conversation</p>
+                <p className="text-xl md:text-2xl font-semibold leading-snug">Tell me what&apos;s going on. We&apos;ll find the clearest next step.</p>
+              </div>
             </div>
-            <div className="space-y-4 max-w-[400px] mx-auto">
-              <Link href="/free-guide" className="block bg-white rounded-lg p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow border border-[#2C2C2C]/5">
-                <p className="text-sm font-semibold text-[#2C2C2C] mb-1">📥 Download the free guide</p>
-                <p className="text-xs text-[#2C2C2C]/60">Start with the Step Zero Gut Reset Guide</p>
+
+            <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3 mt-5 max-w-[540px] mx-auto">
+              <Link href="/free-guide" className="group flex items-center justify-between rounded-2xl bg-[#E7EFE7] p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">Free guide</p><p className="text-xs text-[#3E453F]/55 mt-1">Start with the foundations</p></div><span className="text-[#607E64] group-hover:translate-x-1 transition-transform">→</span>
               </Link>
-              <Link href="/work-with-me" className="block bg-white rounded-lg p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow border border-[#2C2C2C]/5">
-                <p className="text-sm font-semibold text-[#2C2C2C] mb-1">📞 Book a Clarity Call</p>
-                <p className="text-xs text-[#2C2C2C]/60">60 minutes, direct and useful</p>
+              <Link href="/work-with-me" className="group flex items-center justify-between rounded-2xl bg-[#F3E8E2] p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">Clarity Call</p><p className="text-xs text-[#3E453F]/55 mt-1">60 minutes, direct and useful</p></div><span className="text-[#C17B5C] group-hover:translate-x-1 transition-transform">→</span>
               </Link>
-              <a href="https://instagram.com/stepzero_with_palashaa" target="_blank" rel="noopener noreferrer" className="block bg-white rounded-lg p-5 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_16px_rgba(0,0,0,0.08)] transition-shadow border border-[#2C2C2C]/5">
-                <p className="text-sm font-semibold text-[#2C2C2C] mb-1">📱 Instagram</p>
-                <p className="text-xs text-[#2C2C2C]/60">@stepzero_with_palashaa</p>
+              <a href="https://instagram.com/stepzero_with_palashaa" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-white p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">Instagram</p><p className="text-xs text-[#3E453F]/55 mt-1">@stepzero_with_palashaa</p></div><span className="text-[#F0B429] group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
-            <div className="mt-8 p-6 bg-[#EEF3EE] rounded-lg max-w-[400px] mx-auto">
-              <p className="text-sm text-[#2C2C2C]/80 leading-[1.7]"><strong>Media & Collaboration</strong><br />For media, podcast or collaboration enquiries: Open to conversations around guest appearances, expert contributions, and brand collaborations genuinely aligned with the Step Zero philosophy.</p>
+
+            <div className="mt-5 p-6 bg-[#252A26] text-white rounded-[22px] max-w-[540px] mx-auto">
+              <p className="text-sm font-bold mb-2">Media & Collaboration</p>
+              <p className="text-sm text-white/60 leading-[1.7]">For podcasts, expert contributions, and aligned brand collaborations.</p>
             </div>
           </div>
         </div>
