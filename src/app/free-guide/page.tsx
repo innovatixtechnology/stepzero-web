@@ -4,6 +4,14 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const guideTopics = [
+  "Your nervous system is in survival mode",
+  "Your carbohydrate load is higher than you think",
+  "Your gut lining needs repair before probiotics",
+  "You are dehydrated in ways you do not recognise",
+  "Your sleep is affecting your gut more than your food",
+];
+
 export default function FreeGuidePage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "" });
@@ -14,68 +22,64 @@ export default function FreeGuidePage() {
   };
 
   return (
-    <section className="bg-[#FAF7F2] pt-24 md:pt-32 pb-16 md:pb-20">
-      <div className="w-full px-6 md:px-12 lg:px-16 xl:px-24 max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row items-center gap-12">
-          {/* Left Column: Copy */}
-          <div className="md:w-[55%]">
-            <div className="w-12 h-px bg-[#F0B429] mb-6" />
-            <h1 className="font-[family-name:var(--font-playfair)] text-2xl md:text-[36px] font-bold text-[#2C2C2C] mb-6 leading-snug">The Step Zero Gut Reset Guide</h1>
-            <p className="text-lg italic text-[#C17B5C] mb-8">5 Things to Fix Before Any Diet, Supplement or Protocol Can Work</p>
-            <p className="text-base text-[#2C2C2C]/80 leading-[1.7] mb-6">A free guide for anyone who&apos;s doing everything right — and still not feeling it.</p>
+    <section className="bg-[#F8F3EB] pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-start">
+          <div>
+            <p className="text-[11px] tracking-[0.18em] uppercase text-[#607E64] font-semibold mb-5">A practical place to begin</p>
+            <h1 className="text-[40px] md:text-[58px] leading-[1.02] font-semibold text-[#252A26] mb-6">The Step Zero Gut Reset Guide</h1>
+            <p className="text-xl text-[#C17B5C] max-w-xl leading-relaxed mb-5">Five foundations to address before another diet, supplement, or protocol.</p>
+            <p className="text-base text-[#3E453F]/65 leading-[1.7] mb-9">For anyone doing everything right—and still not feeling it.</p>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.04)] mb-10">
-              <h2 className="text-lg font-semibold text-[#2C2C2C] mb-4">Inside the Guide</h2>
-              <ul className="space-y-3">
-                {["Your Nervous System Is in Survival Mode", "Your Carbohydrate Load Is Higher Than You Think", "Your Gut Lining Needs Repair Before It Needs Probiotics", "You're Dehydrated in Ways You Don't Recognise", "Your Sleep Is Sabotaging Your Gut More Than Your Food Is"].map((item) => (
-                  <li key={item} className="text-[15px] text-[#2C2C2C]/80 flex items-start gap-3">
-                    <span className="text-[#F0B429] mt-1">•</span>{item}
-                  </li>
+            <div className="rounded-[26px] bg-[#E7EFE7] p-6 md:p-8 mb-6">
+              <h2 className="text-2xl font-semibold text-[#252A26] mb-6">Inside the guide</h2>
+              <div className="space-y-3">
+                {guideTopics.map((item, index) => (
+                  <div key={item} className="grid grid-cols-[38px_1fr] gap-3 items-center rounded-2xl bg-white/75 p-4">
+                    <span className="w-8 h-8 rounded-full bg-[#F0B429] text-[#252A26] text-xs font-bold flex items-center justify-center">{index + 1}</span>
+                    <p className="text-sm text-[#252A26]/75 leading-snug">{item}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
-            <div className="bg-white rounded-lg p-6 md:p-8 shadow-[0_2px_12px_rgba(0,0,0,0.04)]">
-              <p className="text-base text-[#2C2C2C]/80 leading-[1.7] mb-6">None of these fixes are complicated. None require a special diet, an expensive supplement, or a complete lifestyle overhaul. They are the foundation — the step that most health advice skips entirely.</p>
-
+            <div className="rounded-[26px] bg-white p-6 md:p-8 shadow-[0_20px_50px_rgba(44,44,44,.07)]">
+              <p className="text-base text-[#3E453F]/70 leading-[1.7] mb-6">Simple, practical foundations—without expensive supplements or a complete lifestyle overhaul.</p>
               {submitted ? (
-                <div className="bg-[#EEF3EE] rounded-lg p-6 text-center">
-                  <p className="text-lg font-semibold text-[#7A9E7E] mb-2">🎉 Thank you!</p>
-                  <p className="text-sm text-[#2C2C2C]/70">Your guide is on its way to your inbox. Check your email (and spam!) within the next few minutes.</p>
-                  <Link href="/blog" className="inline-block mt-4 text-[#F0B429] hover:underline font-medium">Read the Blog &rarr;</Link>
+                <div className="bg-[#E7EFE7] rounded-2xl p-6">
+                  <p className="text-lg font-semibold text-[#607E64] mb-2">Thank you—your guide is on its way.</p>
+                  <p className="text-sm text-[#3E453F]/65">Check your email and spam folder within the next few minutes.</p>
+                  <Link href="/blog" className="inline-block mt-4 text-[#C17B5C] font-semibold text-sm">Read the blog →</Link>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-[#2C2C2C] mb-2">Name</label>
-                    <input type="text" id="name" name="name" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="w-full border border-[#7A9E7E] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white" />
+                    <label htmlFor="name" className="block text-sm font-semibold text-[#252A26] mb-2">Name</label>
+                    <input type="text" id="name" name="name" required value={formData.name} onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))} className="w-full border border-[#607E64]/30 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] bg-[#FFFDFC]" />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-[#2C2C2C] mb-2">Email</label>
-                    <input type="email" id="email" name="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="w-full border border-[#7A9E7E] rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] transition-colors bg-white" />
+                    <label htmlFor="email" className="block text-sm font-semibold text-[#252A26] mb-2">Email</label>
+                    <input type="email" id="email" name="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="w-full border border-[#607E64]/30 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] bg-[#FFFDFC]" />
                   </div>
-                  <button type="submit" className="w-full bg-[#F0B429] text-white text-[16px] font-bold px-8 py-4 rounded-lg hover:bg-[#d9a123] transition-colors">Send Me the Free Guide &rarr;</button>
+                  <button type="submit" className="w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors">Send me the free guide →</button>
                 </form>
               )}
             </div>
           </div>
 
-          {/* Right Column: Mockup */}
-          <div className="md:w-[45%] flex justify-center sticky top-24">
-            {/* Guide cover — guide-cover.png (600×750, 4:5) fills 3:4 container */}
-            <div className="relative w-full max-w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
-              <Image
-                src="/images/guide-cover.png"
-                alt="Step Zero Gut Reset Guide"
-                fill
-                className="object-cover object-center"
-                sizes="300px"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#2C2C2C]/60 via-transparent to-transparent" />
-              <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                <p className="font-[family-name:var(--font-playfair)] text-lg font-bold text-white drop-shadow">Gut Reset</p>
-                <p className="text-white/80 text-sm drop-shadow">Guide</p>
+          <div className="w-full lg:sticky lg:top-28">
+            <div className="relative w-full aspect-[3/2] rounded-[30px] overflow-hidden shadow-[0_30px_70px_rgba(44,44,44,.14)]">
+              <Image src="/images/website/4.jpg" alt="Palasha creating the Step Zero Gut Reset Guide" fill className="object-cover" preload sizes="(max-width:1024px) 90vw, 600px" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/55 via-transparent to-transparent" />
+            </div>
+            <div className="relative -mt-16 mx-5 md:mx-10 rounded-[24px] bg-[#FFFDFC] p-6 md:p-8 shadow-[0_20px_50px_rgba(44,44,44,.16)] border border-white">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="w-9 h-9 rounded-full bg-[#F0B429] flex items-center justify-center text-xs font-bold text-[#252A26]">00</span>
+                <p className="text-[10px] uppercase tracking-[0.16em] font-semibold text-[#607E64]">Step Zero with Palasha</p>
               </div>
+              <h2 className="text-3xl md:text-[40px] font-semibold text-[#252A26] leading-tight">Gut Reset</h2>
+              <p className="text-sm text-[#3E453F]/60 mt-3">Five foundational fixes for real Indian lives.</p>
+              <div className="w-16 h-1 rounded-full bg-[#C17B5C] mt-8" />
             </div>
           </div>
         </div>
