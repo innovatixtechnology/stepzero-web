@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
   { href: "/", label: "Home" },
@@ -26,9 +27,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr_1fr] gap-12 border-t border-white/10 pt-12">
           {/* Column 1: Brand */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-white">Step Zero<span className="text-[#F0B429]">.</span></h3>
-            <p className="text-sm text-white/60 mb-5 leading-relaxed max-w-xs">Where every transformation begins—with understanding.</p>
-            <a href="https://instagram.com/stepzero_with_palashaa" target="_blank" rel="noopener noreferrer" className="text-sm text-[#F0B429] hover:text-white transition-colors">@stepzero_with_palashaa</a>
+            <Link href="/" aria-label="Step Zero home" className="inline-flex rounded-2xl overflow-hidden bg-[#F8F3EB] mb-5">
+              <Image src="/images/brand/step-zero-white.jpg" alt="Step Zero with Palasha" width={140} height={100} className="h-[90px] w-auto object-contain" />
+            </Link>
+            <p className="text-sm text-white/60 mb-5 leading-relaxed max-w-xs">Where Every Transformation Begins.</p>
+            <a href="https://instagram.com/stepzero_with_palasha" target="_blank" rel="noopener noreferrer" className="text-sm text-[#F0B429] hover:text-white transition-colors">@stepzero_with_palasha</a>
           </div>
 
           {/* Column 2: Quick Links */}

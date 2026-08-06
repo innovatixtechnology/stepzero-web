@@ -5,8 +5,8 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 const approachCards = [
   {
     num: "01",
-    title: "We simplify the science",
-    body: "Clear, practical guidance that helps you understand what is happening in your body.",
+    title: "We Simplify the Science",
+    body: "We break down complex health concepts into practical, easy-to-understand guidance so you know exactly what’s happening inside your body.",
     color: "bg-[#F1E6D7]",
   },
   {
@@ -21,6 +21,15 @@ const approachCards = [
     body: "Real food and realistic changes—without cleanses or rigid rules.",
     color: "bg-[#F3E8E2]",
   },
+];
+
+const credentials = [
+  "🌍  Internationally Certified — IIN, New York",
+  "📋  Certified Nutritionist — IGMPI",
+  "🔬  Functional Medicine Certified — AIC",
+  "🧘  RYT 200 Yoga Teacher — Sivananda",
+  "📊  12+ Years Brand Strategy",
+  "💛  Post-cholecystectomy & Postpartum Experience",
 ];
 
 const steps = [
@@ -66,10 +75,10 @@ export default function Home() {
                 Integrative Health Coaching
               </div>
               <h1 className="anim-fade-left anim-delay-100 text-[39px] sm:text-[52px] lg:text-[66px] leading-[0.98] font-semibold text-[#252A26] mb-7">
-                Understand your body. <span className="text-[#6F9274]">Transform your health.</span>
+                Understand Your Body. <span className="text-[#6F9274]">Transform Your Health.</span>
               </h1>
-              <p className="anim-fade-left anim-delay-200 text-[17px] md:text-lg text-[#3E453F]/75 leading-[1.7] max-w-[540px] mb-8">
-                Evidence-based nutrition and lifestyle coaching that helps you find the right starting point and build habits that last.
+              <p className="anim-fade-left anim-delay-200 text-[17px] md:text-lg text-[#3E453F]/75 leading-[1.7] max-w-[570px] mb-8">
+                Evidence-based nutrition, gut health and lifestyle medicine to help you uncover the root causes behind symptoms, build sustainable habits and create lasting health.
               </p>
               <div className="anim-fade-left anim-delay-300 flex flex-col sm:flex-row sm:items-center gap-4">
                 <Link href="/free-guide" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#F0B429] text-[#252A26] text-[15px] font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors shadow-[0_12px_30px_rgba(240,180,41,0.2)]">
@@ -79,31 +88,27 @@ export default function Home() {
                   Meet Palasha
                 </Link>
               </div>
-              <div className="anim-fade-left anim-delay-400 grid grid-cols-3 gap-4 mt-12 pt-7 border-t border-[#252A26]/10">
-                {[
-                  ["IIN", "Certified coach"],
-                  ["AIC", "Functional medicine"],
-                  ["RYT 200", "Yoga teacher"],
-                ].map(([title, label]) => (
-                  <div key={title}>
-                    <p className="text-sm font-bold text-[#252A26]">{title}</p>
-                    <p className="text-[11px] text-[#3E453F]/55 mt-1 leading-snug">{label}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             <div className="order-1 lg:order-2 relative w-full max-w-[680px] mx-auto lg:mr-0">
-              <div className="anim-fade-right anim-delay-100 relative ml-auto w-[88%] aspect-[7/9] overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(44,44,44,0.13)]">
+              <div className="anim-fade-right anim-delay-100 relative ml-auto w-full aspect-[4/5] overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(44,44,44,0.13)]">
                 <Image src="/images/website/2a.jpg" alt="Palasha, Integrative Health Coach and founder of Step Zero" fill className="object-cover object-top" preload sizes="(max-width: 1024px) 88vw, 600px" />
               </div>
-              <div className="anim-scale-in anim-delay-400 absolute -left-1 sm:left-0 bottom-8 w-[42%] aspect-[2/3] overflow-hidden rounded-[24px] border-[7px] border-[#F8F3EB] shadow-[0_20px_45px_rgba(44,44,44,0.16)]">
-                <Image src="/images/website/18.jpg" alt="Palasha holding her health coaching certification" fill className="object-cover" sizes="(max-width: 1024px) 36vw, 250px" />
-              </div>
-              <div className="absolute right-3 sm:-right-3 top-8 rounded-2xl bg-white/95 backdrop-blur px-4 py-3 shadow-lg border border-white">
-                <p className="text-[10px] uppercase tracking-[0.14em] text-[#607E64] font-semibold">Root-cause care</p>
-                <p className="text-xs text-[#252A26]/70 mt-1">Personal. Practical. Sustainable.</p>
-              </div>
+            </div>
+          </div>
+
+          <div className="anim-fade-up anim-delay-400 mt-12 pt-6 border-t border-[#252A26]/10 overflow-hidden" aria-label="Palasha's credentials">
+            <div className="credentials-track">
+              {[0, 1].map((set) => (
+                <div key={set} className="flex shrink-0 items-center" aria-hidden={set === 1 ? true : undefined}>
+                  {credentials.map((credential) => (
+                    <div key={`${set}-${credential}`} className="flex shrink-0 items-center gap-5 px-5 md:px-7">
+                      <p className="text-sm md:text-[15px] font-semibold text-[#252A26] whitespace-nowrap">{credential}</p>
+                      <span className="size-1.5 rounded-full bg-[#F0B429]" />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -113,7 +118,7 @@ export default function Home() {
       <section className="bg-[#FFFDFC] py-20 md:py-28 overflow-hidden">
         <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
           <div className="grid lg:grid-cols-2 items-center gap-14 lg:gap-24">
-            <AnimateOnScroll className="max-w-[590px]">
+            <AnimateOnScroll className="max-w-[590px] order-2" delay={120}>
               <p className="text-[11px] tracking-[0.18em] uppercase text-[#7A9E7E] font-semibold mb-5">Does this sound familiar?</p>
               <h2 className="text-3xl md:text-[44px] leading-[1.08] font-semibold text-[#252A26] mb-7">You&apos;re doing the right things. Something still feels off.</h2>
               <div className="space-y-5 text-base text-[#3E453F]/75 leading-[1.75]">
@@ -126,7 +131,7 @@ export default function Home() {
               </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll className="relative min-h-[470px] sm:min-h-[560px]" delay={120}>
+            <AnimateOnScroll className="relative min-h-[470px] sm:min-h-[560px] order-1">
               <div className="absolute left-0 top-0 w-[82%] aspect-[3/2] overflow-hidden rounded-[28px] shadow-[0_24px_60px_rgba(44,44,44,0.12)]">
                 <Image src="/images/website/7a.jpg" alt="Palasha in a calm wellness setting" fill className="object-cover" sizes="(max-width: 1024px) 80vw, 560px" />
               </div>
@@ -157,14 +162,14 @@ export default function Home() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="bg-white/75 rounded-[22px] p-6 md:p-8 border border-white">
                   <p className="text-sm font-bold uppercase tracking-[0.1em] text-[#C17B5C] mb-4">Most advice starts here</p>
-                  <p className="text-lg leading-relaxed text-[#252A26]/75">A diet. A supplement. A workout. A solution before the full picture is clear.</p>
+                  <p className="text-lg leading-relaxed text-[#252A26]/75">Most health advice starts with a solution. A diet. A supplement. A workout plan.</p>
                 </div>
                 <div className="bg-[#252A26] rounded-[22px] p-6 md:p-8 shadow-xl">
                   <p className="text-sm font-bold uppercase tracking-[0.1em] text-[#F0B429] mb-4">We start earlier</p>
-                  <p className="text-lg leading-relaxed text-white/80">Symptoms, digestion, lifestyle, and history—connected into one useful starting point.</p>
+                  <p className="text-lg leading-relaxed text-white/80">We believe health starts earlier. It starts with understanding your symptoms, digestion, lifestyle, and body.</p>
                 </div>
               </div>
-              <p className="mt-7 text-base font-semibold text-[#252A26]">When the foundation makes sense, every next step becomes easier.</p>
+              <p className="mt-7 text-base font-semibold text-[#252A26]">Because when you understand the foundation, every other step becomes easier. That&apos;s why we&apos;re called Step Zero.</p>
             </AnimateOnScroll>
           </div>
         </div>
@@ -175,7 +180,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,.35)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.35)_1px,transparent_1px)] [background-size:64px_64px]" />
         <div className="relative w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
           <div className="grid md:grid-cols-[0.95fr_1.05fr] items-center gap-12 md:gap-20">
-            <AnimateOnScroll className="relative">
+            <AnimateOnScroll className="relative md:order-2" delay={140}>
               <div className="relative w-full aspect-[2/3] max-w-[470px] mx-auto overflow-hidden rounded-t-[220px] rounded-b-[28px] shadow-[0_30px_70px_rgba(20,30,22,0.2)]">
                 <Image src="/images/website/13a.jpg" alt="Palasha, taking a whole-person approach to health" fill className="object-cover" sizes="(max-width: 768px) 90vw, 470px" />
               </div>
@@ -183,11 +188,14 @@ export default function Home() {
                 <p className="text-sm font-bold leading-snug">Your body works as one connected system.</p>
               </div>
             </AnimateOnScroll>
-            <AnimateOnScroll delay={140}>
+            <AnimateOnScroll className="md:order-1">
               <p className="text-[11px] tracking-[0.18em] uppercase text-white/65 font-semibold mb-5">The whole picture</p>
               <h2 className="text-3xl md:text-[48px] leading-[1.08] font-semibold text-white mb-7">Why modern health feels so confusing</h2>
-              <p className="text-base md:text-lg leading-[1.8] mb-6 text-white/80">More information has not created more clarity. Nutrition is separated from sleep, gut health from stress, and exercise from recovery.</p>
-              <p className="text-lg leading-[1.7] font-semibold text-white">Step Zero connects those pieces, so your plan responds to you—not an isolated symptom.</p>
+              <div className="space-y-5 text-base md:text-lg leading-[1.8] text-white/80">
+                <p>Today we have access to more health information than ever before. Yet many people still struggle with bloating, fatigue, poor digestion, inflammation and stubborn weight. Not because they lack motivation, but because health advice is often fragmented.</p>
+                <p>Nutrition is discussed separately from sleep. Gut health is discussed separately from stress. Exercise is discussed separately from recovery.</p>
+                <p className="font-semibold text-white">At Step Zero, we look at the whole picture because your body works as one connected system—not as isolated symptoms.</p>
+              </div>
             </AnimateOnScroll>
           </div>
         </div>
@@ -262,8 +270,8 @@ export default function Home() {
       {/* SECTION 6: TESTIMONIALS */}
       <section className="bg-[#F4EEE5] py-20 md:py-28">
         <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
-          <div className="grid lg:grid-cols-[0.72fr_1.28fr] gap-10 lg:gap-16 items-stretch">
-            <AnimateOnScroll className="relative min-h-[520px] overflow-hidden rounded-[28px]">
+          <div className="grid lg:grid-cols-[1.28fr_0.72fr] gap-10 lg:gap-16 items-stretch">
+            <AnimateOnScroll className="relative min-h-[520px] overflow-hidden rounded-[28px] lg:order-2">
               <Image src="/images/website/18.jpg" alt="Palasha, certified integrative nutrition health coach" fill className="object-cover" sizes="(max-width: 1024px) 90vw, 440px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/70 via-transparent to-transparent" />
               <div className="absolute left-7 right-7 bottom-7 text-white">
@@ -271,7 +279,7 @@ export default function Home() {
                 <p className="text-xl font-semibold leading-snug">Evidence-led guidance, delivered with empathy.</p>
               </div>
             </AnimateOnScroll>
-            <div>
+            <div className="lg:order-1">
               <AnimateOnScroll className="mb-9">
                 <p className="text-[11px] tracking-[0.18em] uppercase text-[#7A9E7E] font-semibold mb-4">Client stories</p>
                 <h2 className="text-3xl md:text-[46px] font-semibold text-[#252A26]">What people say</h2>

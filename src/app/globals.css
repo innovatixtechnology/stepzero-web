@@ -86,6 +86,18 @@ button {
   will-change: transform;
 }
 
+.credentials-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.credentials-track:hover,
+.credentials-track:focus-within {
+  animation-play-state: paused;
+}
+
 .marquee-track:hover,
 .marquee-track:focus-within {
   animation-play-state: paused;
@@ -105,19 +117,17 @@ button {
 .anim-delay-600 { animation-delay: 0.6s; }
 
 @media (prefers-reduced-motion: reduce) {
-  .marquee-track {
+  .marquee-track,
+  .credentials-track {
     animation: none;
   }
 }
 
-/* Scroll-triggered: base state (opacity hidden until JS adds .in-view) */
+/* Content remains readable even if JavaScript or IntersectionObserver is unavailable. */
 [data-scroll] {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1;
+  transform: none;
 }
 [data-scroll].in-view {
-  opacity: 1;
-  transform: translateY(0);
+  animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
