@@ -4,11 +4,13 @@ import AnimateOnScroll from "@/components/AnimateOnScroll";
 
 const programmeIncludes = [
   "Deep-dive intake assessment",
-  "Personalised nutrition protocol",
-  "Gut health reset plan",
-  "Bi-weekly video coaching",
+  "Personalised nutrition protocol — meal framework, food sequencing, and supplement guidance",
+  "Gut health reset plan specific to your history",
+  "Bi-weekly 1:1 coaching calls (video)",
   "WhatsApp support between sessions",
-  "Progress reviews and maintenance plan",
+  "Customised meal plan framework — flexible, not rigid",
+  "Progress tracking and protocol updates every four weeks",
+  "Closing session with a long-term maintenance plan",
 ];
 
 export default function WorkWithMePage() {
@@ -21,7 +23,8 @@ export default function WorkWithMePage() {
             <div className="order-2 lg:order-1 max-w-xl">
               <p className="text-[11px] tracking-[0.18em] uppercase text-[#607E64] font-semibold mb-5">Work with me</p>
               <h1 className="text-[42px] md:text-[64px] leading-[1] font-semibold text-[#252A26] mb-7">This is where the work begins.</h1>
-              <p className="text-lg text-[#3E453F]/70 leading-[1.75] mb-8">Begin with a real conversation about what is happening, then build a personalised, evidence-based plan around you.</p>
+              <p className="text-lg text-[#3E453F]/70 leading-[1.75] mb-5">Not with a meal plan. Not with a supplement protocol. With a real conversation about what&apos;s actually going on—and a plan built entirely around you.</p>
+              <p className="text-base text-[#3E453F]/65 leading-[1.75] mb-8">At Step Zero, every offering is built on one principle: your body is not a problem to be solved with a generic solution. Everything here is personalised, evidence-based, and designed to create lasting change—not just short-term results.</p>
               <Link href="/contact" className="inline-flex items-center rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors shadow-[0_12px_30px_rgba(240,180,41,.2)]">Find your starting point →</Link>
             </div>
             <div className="order-1 lg:order-2 relative min-h-[430px] sm:min-h-[560px]">
@@ -30,10 +33,6 @@ export default function WorkWithMePage() {
               </div>
               <div className="absolute left-0 bottom-0 w-[45%] aspect-[2/3] rounded-[24px] overflow-hidden border-[7px] border-[#F8F3EB] shadow-xl">
                 <Image src="/images/website/13a.jpg" alt="Palasha, Integrative Health Coach" fill className="object-cover" sizes="(max-width:1024px) 45vw, 260px" />
-              </div>
-              <div className="absolute right-[3%] bottom-[9%] bg-[#6F9274] text-white rounded-2xl px-5 py-4 shadow-xl max-w-[220px]">
-                <p className="text-[10px] tracking-[0.14em] uppercase text-white/60 font-semibold mb-1">One connected plan</p>
-                <p className="text-sm font-semibold">Built around your body, history, and life.</p>
               </div>
             </div>
           </div>
@@ -47,9 +46,8 @@ export default function WorkWithMePage() {
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16">
               <div>
                 <p className="text-[11px] tracking-[0.16em] uppercase text-[#F0B429] font-semibold mb-5">Flagship offering</p>
-                <h2 className="text-3xl md:text-[44px] font-semibold text-white leading-tight mb-5">1:1 Integrative Health Coaching</h2>
-                <p className="text-xl text-white/80 mb-2">Three-month immersion</p>
-                <p className="text-sm text-white/50 leading-relaxed max-w-sm">Focused, personalised support for people ready to go deeper and make sustainable change.</p>
+                <h2 className="text-3xl md:text-[44px] font-semibold text-white leading-tight mb-5">1:1 Integrative Health Coaching — 3 Month Immersion</h2>
+                <p className="text-xl italic text-[#E7B8A3] mb-2">For people who are ready to go deep and do it properly.</p>
               </div>
               <div>
                 <div className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -60,7 +58,7 @@ export default function WorkWithMePage() {
                     </div>
                   ))}
                 </div>
-                <Link href="/contact" className="inline-flex justify-center w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Apply to work together →</Link>
+                <Link href="/contact" className="inline-flex justify-center w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Apply for the Signature Programme →</Link>
               </div>
             </div>
           </AnimateOnScroll>
@@ -81,13 +79,13 @@ export default function WorkWithMePage() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
           <div className="grid md:grid-cols-2 rounded-[30px] overflow-hidden bg-white shadow-[0_25px_60px_rgba(44,44,44,.08)]">
             <AnimateOnScroll className="relative min-h-[420px] md:min-h-full">
-              <Image src="/images/website/10.jpg" alt="A one-to-one clarity conversation with Palasha" fill className="object-cover" sizes="(max-width:768px) 90vw, 600px" />
+              <Image src="/images/website/10.jpg" alt="A one-to-one clarity conversation with Palasha" fill className="object-cover object-top" sizes="(max-width:768px) 90vw, 600px" />
             </AnimateOnScroll>
             <AnimateOnScroll className="p-7 md:p-12 lg:p-14" delay={100}>
               <p className="text-[11px] tracking-[0.16em] uppercase text-[#C17B5C] font-semibold mb-5">Start smaller</p>
               <h2 className="text-3xl md:text-[40px] font-semibold text-[#252A26] mb-3">The Clarity Call</h2>
               <p className="text-base font-semibold text-[#607E64] mb-6">Single 60-minute consultation</p>
-              <p className="text-base text-[#3E453F]/70 leading-[1.75] mb-8">Expert eyes on your situation before committing to a programme. This is a focused working session—not a sales call.</p>
+              <p className="text-base text-[#3E453F]/70 leading-[1.75] mb-8">For people who want expert eyes on their situation before committing to a programme. This is not a sales call. It&apos;s a working session.</p>
               <Link href="/contact" className="inline-flex rounded-full bg-[#6F9274] text-white text-sm font-bold px-7 py-4 hover:bg-[#5f8064] transition-colors">Book a Clarity Call →</Link>
             </AnimateOnScroll>
           </div>

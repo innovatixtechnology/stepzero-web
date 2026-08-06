@@ -79,8 +79,8 @@ export default function ContactPage() {
               <Link href="/work-with-me" className="group flex items-center justify-between rounded-2xl bg-[#F3E8E2] p-5">
                 <div><p className="text-sm font-bold text-[#252A26]">Clarity Call</p><p className="text-xs text-[#3E453F]/55 mt-1">60 minutes, direct and useful</p></div><span className="text-[#C17B5C] group-hover:translate-x-1 transition-transform">→</span>
               </Link>
-              <a href="https://instagram.com/stepzero_with_palashaa" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-white p-5">
-                <div><p className="text-sm font-bold text-[#252A26]">Instagram</p><p className="text-xs text-[#3E453F]/55 mt-1">@stepzero_with_palashaa</p></div><span className="text-[#F0B429] group-hover:translate-x-1 transition-transform">→</span>
+              <a href="https://instagram.com/stepzero_with_palasha" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-white p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">Instagram</p><p className="text-xs text-[#3E453F]/55 mt-1">@stepzero_with_palasha</p></div><span className="text-[#F0B429] group-hover:translate-x-1 transition-transform">→</span>
               </a>
             </div>
 

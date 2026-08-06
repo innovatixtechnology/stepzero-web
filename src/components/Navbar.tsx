@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -32,10 +33,10 @@ export default function Navbar() {
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold text-[#252A26] hover:text-[#607E64] transition-colors"
+          className="flex items-center -ml-2"
+          aria-label="Step Zero home"
         >
-          Step Zero
-          <span className="w-2 h-2 rounded-full bg-[#F0B429]" />
+          <Image src="/images/brand/step-zero-transparent.png" alt="Step Zero with Palasha" width={100} height={79} className="h-[64px] w-auto object-contain" preload />
         </Link>
 
         {/* Desktop Nav */}
