@@ -235,10 +235,6 @@ export default function Home() {
               <div className="relative aspect-[3/2] overflow-hidden rounded-[28px] shadow-2xl">
                 <Image src="/images/website/4.jpg" alt="A focused health coaching session with Palasha" fill className="object-cover" sizes="(max-width: 1024px) 90vw, 620px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/45 to-transparent" />
-                <div className="absolute left-6 bottom-6 bg-white/95 rounded-2xl px-5 py-4 max-w-[250px]">
-                  <p className="text-[10px] uppercase tracking-[0.14em] font-semibold text-[#607E64] mb-1">A clear way forward</p>
-                  <p className="text-sm font-semibold text-[#252A26]">Practical support built around real life.</p>
-                </div>
               </div>
             </AnimateOnScroll>
             <div>

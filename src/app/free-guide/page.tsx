@@ -72,15 +72,6 @@ export default function FreeGuidePage() {
               <Image src="/images/website/4.jpg" alt="Palasha creating the Step Zero Gut Reset Guide" fill className="object-cover" preload sizes="(max-width:1024px) 90vw, 600px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/55 via-transparent to-transparent" />
             </div>
-            <div className="relative -mt-16 mx-5 md:mx-10 rounded-[24px] bg-[#FFFDFC] p-6 md:p-8 shadow-[0_20px_50px_rgba(44,44,44,.16)] border border-white">
-              <div className="flex items-center gap-3 mb-8">
-                <span className="w-9 h-9 rounded-full bg-[#F0B429] flex items-center justify-center text-xs font-bold text-[#252A26]">00</span>
-                <p className="text-[10px] uppercase tracking-[0.16em] font-semibold text-[#607E64]">Step Zero with Palasha</p>
-              </div>
-              <h2 className="text-3xl md:text-[40px] font-semibold text-[#252A26] leading-tight">Gut Reset</h2>
-              <p className="text-sm text-[#3E453F]/60 mt-3">Five foundational fixes for real Indian lives.</p>
-              <div className="w-16 h-1 rounded-full bg-[#C17B5C] mt-8" />
-            </div>
           </div>
         </div>
       </div>
