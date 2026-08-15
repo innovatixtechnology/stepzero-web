@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BLOG_UPDATED, blogPosts } from "@/lib/blog";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gut Health & Nutrition Journal | Step Zero",
+  description: "Practical, evidence-aware articles on gut health, nutrition, recovery, metabolism and sustainable wellbeing from Step Zero with Palasha.",
+};
 
 export default function BlogPage() {
   const [featured] = blogPosts;

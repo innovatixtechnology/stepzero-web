@@ -26,7 +26,8 @@ export default function ContactPage() {
           <div>
             <p className="text-[11px] tracking-[0.18em] uppercase text-[#607E64] font-semibold mb-5">Contact</p>
             <h1 className="text-[42px] md:text-[62px] leading-none font-semibold text-[#252A26] mb-6">Let&apos;s talk.</h1>
-            <p className="text-lg text-[#3E453F]/68 leading-[1.75] max-w-xl mb-9">Not sure where to start? Try the free Gut Health Guide, or send a message when you are ready to talk.</p>
+            <p className="text-lg text-[#3E453F]/68 leading-[1.75] max-w-xl mb-5">Not sure where to start? Send a quick message and tell us what&apos;s going on.</p>
+            <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 mb-9 hover:bg-[#dfa51d] transition-colors">Start on WhatsApp →</a>
 
             <form onSubmit={handleSubmit} className="rounded-[28px] bg-white p-6 md:p-9 shadow-[0_25px_60px_rgba(44,44,44,.07)] space-y-5">
               <div className="grid sm:grid-cols-2 gap-5">
@@ -49,7 +50,7 @@ export default function ContactPage() {
                 <div>
                   <label htmlFor="topic" className="block text-sm font-semibold text-[#252A26] mb-2">What brings you here?</label>
                   <select id="topic" name="topic" value={formData.topic} onChange={handleChange} className={fieldClass}>
-                    <option value="">Select</option><option value="coaching">1:1 Coaching</option><option value="clarity">Clarity Call</option><option value="general">General Question</option><option value="media">Media & Collaboration</option>
+                    <option value="">Select</option><option value="whatsapp">WhatsApp conversation</option><option value="coaching">1:1 Coaching</option><option value="clarity">Clarity Call</option><option value="general">General Question</option><option value="media">Media & Collaboration</option>
                   </select>
                 </div>
               </div>
@@ -73,11 +74,11 @@ export default function ContactPage() {
             </div>
 
             <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3 mt-5 max-w-[540px] mx-auto">
-              <Link href="/free-guide" className="group flex items-center justify-between rounded-2xl bg-[#E7EFE7] p-5">
-                <div><p className="text-sm font-bold text-[#252A26]">Free guide</p><p className="text-xs text-[#3E453F]/55 mt-1">Start with the foundations</p></div><span className="text-[#607E64] group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
+              <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-[#E7EFE7] p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">WhatsApp</p><p className="text-xs text-[#3E453F]/55 mt-1">Start the conversation</p></div><span className="text-[#607E64] group-hover:translate-x-1 transition-transform">→</span>
+              </a>
               <Link href="/work-with-me" className="group flex items-center justify-between rounded-2xl bg-[#F3E8E2] p-5">
-                <div><p className="text-sm font-bold text-[#252A26]">Clarity Call</p><p className="text-xs text-[#3E453F]/55 mt-1">60 minutes, direct and useful</p></div><span className="text-[#C17B5C] group-hover:translate-x-1 transition-transform">→</span>
+                <div><p className="text-sm font-bold text-[#252A26]">Clarity Call</p><p className="text-xs text-[#3E453F]/55 mt-1">30 minutes, direct and useful</p></div><span className="text-[#C17B5C] group-hover:translate-x-1 transition-transform">→</span>
               </Link>
               <a href="https://instagram.com/stepzero_with_palasha" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-white p-5">
                 <div><p className="text-sm font-bold text-[#252A26]">Instagram</p><p className="text-xs text-[#3E453F]/55 mt-1">@stepzero_with_palasha</p></div><span className="text-[#F0B429] group-hover:translate-x-1 transition-transform">→</span>

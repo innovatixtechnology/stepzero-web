@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLOG_UPDATED, blogPosts, getBlogPost } from "@/lib/blog";
+import type { Metadata } from "next";
 
 interface BlogArticleProps {
   params: Promise<{ slug: string }>;
@@ -9,6 +10,15 @@ interface BlogArticleProps {
 
 export function generateStaticParams() {
   return blogPosts.map(({ slug }) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: BlogArticleProps): Promise<Metadata> {
+  const article = getBlogPost((await params).slug);
+  if (!article) return {};
+  return {
+    title: `${article.title} | Step Zero`,
+    description: article.excerpt,
+  };
 }
 
 export default async function BlogArticlePage({ params }: BlogArticleProps) {

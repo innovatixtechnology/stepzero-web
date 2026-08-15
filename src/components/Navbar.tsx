@@ -30,13 +30,13 @@ export default function Navbar() {
           : "bg-[#F8F3EB]/90 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24 h-20 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24 h-24 flex items-center justify-between">
         <Link
           href="/"
           className="flex items-center -ml-2"
           aria-label="Step Zero home"
         >
-          <Image src="/images/brand/step-zero-transparent.png" alt="Step Zero with Palasha" width={100} height={79} className="h-[64px] w-auto object-contain" preload />
+          <Image src="/images/brand/step-zero-transparent.png" alt="Step Zero with Palasha" width={140} height={111} className="h-[82px] w-auto object-contain" preload />
         </Link>
 
         {/* Desktop Nav */}
@@ -93,7 +93,7 @@ export default function Navbar() {
 
       {/* Mobile Full-Screen Overlay */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 top-20 bg-[#F8F3EB] z-40 flex flex-col items-start justify-center gap-7 px-8">
+        <div className="md:hidden fixed inset-0 top-24 bg-[#F8F3EB] z-40 flex flex-col items-start justify-center gap-7 px-8">
           {[...navLinks, { href: "/free-guide", label: "Free Guide" }].map(
             (link) => (
               <Link

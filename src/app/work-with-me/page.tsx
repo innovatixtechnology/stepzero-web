@@ -1,16 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import type { Metadata } from "next";
 
-const programmeIncludes = [
-  "Deep-dive intake assessment",
-  "Personalised nutrition protocol — meal framework, food sequencing, and supplement guidance",
-  "Gut health reset plan specific to your history",
-  "Bi-weekly 1:1 coaching calls (video)",
-  "WhatsApp support between sessions",
-  "Customised meal plan framework — flexible, not rigid",
-  "Progress tracking and protocol updates every four weeks",
-  "Closing session with a long-term maintenance plan",
+export const metadata: Metadata = {
+  title: "Health Coaching Programmes | Step Zero with Palasha",
+  description: "Explore personalised 1, 3, 6 and 12-month Step Zero health coaching programmes, the S.T.E.P. method, Clarity Call and common questions.",
+};
+
+const programmes = [
+  { name: "The Foundation Month", duration: "1 Month", focus: "Stabilize", line: "Calm the noise. Build your first real habits.", bestFor: "A low-commitment starting point, or a reset for past clients who’ve drifted and want to re-anchor before going deeper." },
+  { name: "The Signature Programme", duration: "3 Months", focus: "Stabilize + Transform + Eat", line: "Your full foundation, rebuilt properly.", bestFor: "People ready to go deep and do it properly — this is the existing flagship offering." },
+  { name: "The Full Reset", duration: "6 Months", focus: "Complete S.T.E.P. + into Z.E.R.O.", line: "Not a quick fix. A full rebuild.", bestFor: "Hormonal imbalance, chronic gut issues, or long-standing patterns that need more runway than three months gives." },
+  { name: "The Optimal You Year", duration: "12 Months", focus: "Full S.T.E.P. → Z.E.R.O.", line: "A year to make Zero your normal.", bestFor: "Long-term lifestyle disease prevention, healthy ageing, or sustained, supported transformation." },
+];
+
+const framework = [
+  ["S", "Stabilize", "Calm inflammation, regulate blood sugar, and support your nervous system."],
+  ["T", "Transform", "Restore gut health, improve digestion, balance hormones, and rebuild your metabolism."],
+  ["E", "Eat", "Build a nutrition approach around your body, lifestyle, and goals."],
+  ["P", "Perform", "Create lasting habits through movement, sleep, stress management, and accountability."],
+];
+
+const destination = [
+  ["Z", "Zero Inflammation", "Your body feels lighter, calmer, and more resilient."],
+  ["E", "Energized Living", "You wake up with energy instead of exhaustion."],
+  ["R", "Resilient Health", "Your gut, metabolism, and hormones start working with you, not against you."],
+  ["O", "Optimal You", "You have the tools and habits to keep it that way — for life, not for thirty days."],
+];
+
+const faqs = [
+  ["What does this actually cost?", "The exact investment depends on your starting point, which we map out on your Clarity Call. Investment varies by programme and by what your body actually needs — that’s part of what we figure out together before you commit to anything."],
+  ["How long until I see results?", "Most clients notice a shift in energy, digestion, or sleep within the first 3–4 weeks of the Stabilize phase. Deeper changes build over the full length of your programme."],
+  ["Does this replace my doctor?", "No. Step Zero is complementary to medical care, not a replacement for it. Coaching does not create a doctor-patient relationship, and we work alongside your doctor when medical care is needed."],
+  ["What happens after my programme ends?", "You leave with a long-term maintenance plan built around what worked for your body. Some clients extend into a longer programme; others continue independently."],
+  ["Do I need to be based in India?", "No — coaching happens over video, so you can be anywhere. The nutrition guidance is built around real, wholesome foods and practical lifestyles."],
+  ["I’ve already tried everything. Will this be different?", "Probably, because most ‘everything’ is symptom-chasing. Step Zero starts by understanding why your body was not responding in the first place."],
+  ["What’s the difference between a Clarity Call and a full programme?", "The Clarity Call is a single 30-minute working session that gives you a clear read and next step. A full programme is the ongoing, personalised work of making change happen."],
+  ["Is this only for people with a diagnosed condition?", "Not at all. Some clients come with a diagnosis; others simply know something feels off. Both are who Step Zero is built for."],
 ];
 
 export default function WorkWithMePage() {
@@ -39,26 +66,38 @@ export default function WorkWithMePage() {
         </div>
       </section>
 
-      {/* Section 6.2: Signature Programme Card */}
+      <section className="bg-[#E7EFE7] py-20 md:py-28">
+        <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
+          <AnimateOnScroll className="max-w-3xl mb-12">
+            <p className="text-[11px] tracking-[0.16em] uppercase text-[#607E64] font-semibold mb-4">The S.T.E.P. → Z.E.R.O. Method</p>
+            <h2 className="text-3xl md:text-[44px] font-semibold text-[#252A26] mb-5">A full method with a clear destination.</h2>
+            <p className="text-base text-[#3E453F]/70 leading-[1.75]">Step Zero isn&apos;t just a starting point. Once we find your actual foundation, we move through four stages that take you somewhere specific: the place where your body finally works with you instead of against you.</p>
+          </AnimateOnScroll>
+          <div className="grid lg:grid-cols-2 gap-6">
+            {[{ title: "The S.T.E.P. Framework", items: framework }, { title: "The Z.E.R.O. Destination", items: destination }].map((group) => (
+              <AnimateOnScroll key={group.title} className="rounded-[28px] bg-white p-7 md:p-9">
+                <h3 className="text-2xl font-semibold text-[#252A26] mb-6">{group.title}</h3>
+                <div className="space-y-5">{group.items.map(([letter, title, body]) => <div key={title} className="grid grid-cols-[42px_1fr] gap-3"><span className="size-10 rounded-full bg-[#F0B429] grid place-items-center font-bold">{letter}</span><div><p className="font-bold text-[#252A26]">{title}</p><p className="text-sm text-[#3E453F]/65 leading-relaxed">{body}</p></div></div>)}</div>
+              </AnimateOnScroll>
+            ))}
+          </div>
+          <p className="text-center text-xl font-semibold text-[#252A26] mt-10">Healing starts before dieting. That&apos;s Step Zero.</p>
+        </div>
+      </section>
+
+      {/* Section 6.2: Programmes */}
       <section className="bg-[#FFFDFC] py-20 md:py-28">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
           <AnimateOnScroll className="rounded-[30px] bg-[#252A26] text-white p-7 md:p-12 lg:p-14 shadow-[0_30px_70px_rgba(44,44,44,.12)]">
             <div className="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16">
               <div>
-                <p className="text-[11px] tracking-[0.16em] uppercase text-[#F0B429] font-semibold mb-5">Flagship offering</p>
-                <h2 className="text-3xl md:text-[44px] font-semibold text-white leading-tight mb-5">1:1 Integrative Health Coaching — 3 Month Immersion</h2>
-                <p className="text-xl italic text-[#E7B8A3] mb-2">For people who are ready to go deep and do it properly.</p>
+                <p className="text-[11px] tracking-[0.16em] uppercase text-[#F0B429] font-semibold mb-5">Programmes at Step Zero</p>
+                <h2 className="text-3xl md:text-[44px] font-semibold text-white leading-tight mb-5">Choose how deep you want to go.</h2>
+                <p className="text-lg text-white/65 leading-relaxed">Every body needs a different amount of time to move through Stabilize, Transform, Eat, and Perform.</p>
               </div>
               <div>
-                <div className="grid sm:grid-cols-2 gap-3 mb-8">
-                  {programmeIncludes.map((item, index) => (
-                    <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5">
-                      <span className="text-xs font-bold text-[#F0B429]">0{index + 1}</span>
-                      <p className="text-sm text-white/75 mt-3 leading-snug">{item}</p>
-                    </div>
-                  ))}
-                </div>
-                <Link href="/contact" className="inline-flex justify-center w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Apply for the Signature Programme →</Link>
+                <div className="grid sm:grid-cols-2 gap-3 mb-8">{programmes.map((programme) => <div key={programme.name} className="rounded-2xl border border-white/10 bg-white/[0.05] p-5"><p className="text-xs font-bold text-[#F0B429]">{programme.duration} · {programme.focus}</p><h3 className="text-xl font-semibold mt-3">{programme.name}</h3><p className="text-sm italic text-[#E7B8A3] mt-2">{programme.line}</p><p className="text-sm text-white/65 mt-3 leading-relaxed">{programme.bestFor}</p></div>)}</div>
+                <Link href="/contact" className="inline-flex justify-center w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Find your programme →</Link>
               </div>
             </div>
           </AnimateOnScroll>
@@ -84,11 +123,18 @@ export default function WorkWithMePage() {
             <AnimateOnScroll className="p-7 md:p-12 lg:p-14" delay={100}>
               <p className="text-[11px] tracking-[0.16em] uppercase text-[#C17B5C] font-semibold mb-5">Start smaller</p>
               <h2 className="text-3xl md:text-[40px] font-semibold text-[#252A26] mb-3">The Clarity Call</h2>
-              <p className="text-base font-semibold text-[#607E64] mb-6">Single 60-minute consultation</p>
+              <p className="text-base font-semibold text-[#607E64] mb-6">Single 30-minute consultation</p>
               <p className="text-base text-[#3E453F]/70 leading-[1.75] mb-8">For people who want expert eyes on their situation before committing to a programme. This is not a sales call. It&apos;s a working session.</p>
               <Link href="/contact" className="inline-flex rounded-full bg-[#6F9274] text-white text-sm font-bold px-7 py-4 hover:bg-[#5f8064] transition-colors">Book a Clarity Call →</Link>
             </AnimateOnScroll>
           </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F8F3EB] py-20 md:py-28">
+        <div className="max-w-[1000px] mx-auto px-5 sm:px-8 md:px-12">
+          <AnimateOnScroll className="text-center mb-12"><p className="text-[11px] tracking-[0.16em] uppercase text-[#607E64] font-semibold mb-4">Frequently asked questions</p><h2 className="text-3xl md:text-[44px] font-semibold text-[#252A26]">Before we begin</h2></AnimateOnScroll>
+          <div className="space-y-3">{faqs.map(([question, answer]) => <details key={question} className="group rounded-2xl bg-white p-6"><summary className="cursor-pointer list-none font-bold text-[#252A26] flex justify-between gap-4">{question}<span className="text-[#C17B5C] group-open:rotate-45 transition-transform">+</span></summary><p className="text-sm text-[#3E453F]/70 leading-[1.75] pt-4 max-w-3xl">{answer}</p></details>)}</div>
         </div>
       </section>
 

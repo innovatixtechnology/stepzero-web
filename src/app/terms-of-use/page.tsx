@@ -1,3 +1,7 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Terms of Use | Step Zero", description: "Terms governing use of the Step Zero with Palasha website and its educational content." };
+
 export default function TermsOfUsePage() {
   return (
     <section className="bg-[#FAF7F2] pt-24 md:pt-32 pb-16 md:pb-20">

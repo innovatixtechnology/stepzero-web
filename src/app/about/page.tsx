@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Palasha | Step Zero Integrative Health Coach",
+  description: "Meet Palasha, an integrative nutrition health coach whose personal recovery and evidence-aware approach shaped the Step Zero method.",
+};
 
 const credentials = [
   "Internationally Certified Integrative Nutrition Health Coach — IIN, New York",
@@ -47,7 +53,7 @@ export default function AboutPage() {
             </div>
             <div className="order-1 lg:order-2 relative">
               <div className="relative w-full aspect-[3/2] rounded-[30px] overflow-hidden shadow-[0_30px_70px_rgba(44,44,44,0.14)]">
-                <Image src="/images/website/7a.jpg" alt="Palasha, founder of Step Zero" fill className="object-cover object-top" preload sizes="(max-width:1024px) 90vw, 680px" />
+                <Image src="/images/about-hero-client.jpg" alt="Palasha, founder of Step Zero" fill className="object-cover object-center" preload sizes="(max-width:1024px) 90vw, 680px" />
               </div>
             </div>
           </div>
