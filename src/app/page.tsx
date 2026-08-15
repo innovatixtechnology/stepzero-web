@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Integrative Health Coaching | Step Zero with Palasha",
+  description: "Personalised integrative health coaching for gut health, energy, hormones and sustainable habits, built around the foundation your body needs.",
+};
 
 const approachCards = [
   {
@@ -33,9 +39,9 @@ const credentials = [
 ];
 
 const steps = [
-  { num: "01", title: "Download the Guide", body: "Start with five practical foundations for gut health." },
-  { num: "02", title: "Book a Clarity Call", body: "Use a focused 60-minute session to map your next steps." },
-  { num: "03", title: "Begin the Work", body: "Go deeper with three months of personalised coaching." },
+  { num: "01", title: "Start the Conversation", body: "Send a WhatsApp message and tell us what’s going on." },
+  { num: "02", title: "Book a Clarity Call", body: "A 30 min focused session to understand you and what you are dealing with better and deeper." },
+  { num: "03", title: "Begin the Work", body: "Start your programme." },
 ];
 
 const testimonials = [
@@ -81,9 +87,9 @@ export default function Home() {
                 Evidence-based nutrition, gut health and lifestyle medicine to help you uncover the root causes behind symptoms, build sustainable habits and create lasting health.
               </p>
               <div className="anim-fade-left anim-delay-300 flex flex-col sm:flex-row sm:items-center gap-4">
-                <Link href="/free-guide" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#F0B429] text-[#252A26] text-[15px] font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors shadow-[0_12px_30px_rgba(240,180,41,0.2)]">
-                  Get the free gut health guide <Arrow />
-                </Link>
+                <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex justify-center items-center gap-2 rounded-full bg-[#F0B429] text-[#252A26] text-[15px] font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors shadow-[0_12px_30px_rgba(240,180,41,0.2)]">
+                  Connect with me <Arrow />
+                </a>
                 <Link href="/about" className="inline-flex items-center justify-center text-sm font-semibold text-[#607E64] px-5 py-3 hover:text-[#252A26] transition-colors">
                   Meet Palasha
                 </Link>
@@ -92,7 +98,7 @@ export default function Home() {
 
             <div className="order-1 lg:order-2 relative w-full max-w-[680px] mx-auto lg:mr-0">
               <div className="anim-fade-right anim-delay-100 relative ml-auto w-full aspect-[4/5] overflow-hidden rounded-[32px] shadow-[0_30px_70px_rgba(44,44,44,0.13)]">
-                <Image src="/images/website/2a.jpg" alt="Palasha, Integrative Health Coach and founder of Step Zero" fill className="object-cover object-top" preload sizes="(max-width: 1024px) 88vw, 600px" />
+                <Image src="/images/home-hero-client.jpg" alt="Palasha, Integrative Health Coach and founder of Step Zero" fill className="object-cover object-top" preload sizes="(max-width: 1024px) 88vw, 600px" />
               </div>
             </div>
           </div>
@@ -256,7 +262,7 @@ export default function Home() {
                 ))}
               </div>
               <AnimateOnScroll delay={220}>
-                <Link href="/free-guide" className="inline-flex items-center gap-2 mt-8 text-[#F0B429] text-sm font-bold hover:text-white transition-colors">Download the free guide <Arrow /></Link>
+                <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-8 text-[#F0B429] text-sm font-bold hover:text-white transition-colors">Send a WhatsApp message <Arrow /></a>
               </AnimateOnScroll>
             </div>
           </div>
@@ -310,16 +316,16 @@ export default function Home() {
             <AnimateOnScroll>
               <p className="text-[11px] uppercase tracking-[0.16em] text-white/60 font-semibold mb-4">Your first step is free</p>
               <h2 className="text-3xl md:text-[44px] font-semibold text-white mb-5 leading-tight">Not ready to book yet? Start here.</h2>
-              <p className="text-base text-white/75 leading-[1.75] max-w-xl mb-8">Five practical, evidence-based foundations for better gut health—made for real Indian lives.</p>
-              <Link href="/free-guide" className="inline-flex items-center gap-2 rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Send me the free guide <Arrow /></Link>
+              <p className="text-base text-white/75 leading-[1.75] max-w-xl mb-8">Send a quick message and tell us what&apos;s going on. No forms, no pressure — just a real conversation about where to start.</p>
+              <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-white transition-colors">Connect with me <Arrow /></a>
             </AnimateOnScroll>
             <AnimateOnScroll className="w-full" delay={130}>
               <div className="relative w-full aspect-[3/2] overflow-hidden rounded-[24px] shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
                 <Image src="/images/website/1.jpg" alt="Palasha with the Step Zero health journal" fill className="object-cover" sizes="(max-width: 768px) 90vw, 440px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#252A26]/65 via-transparent to-transparent" />
                 <div className="absolute bottom-5 left-5 text-white">
-                  <p className="text-xl font-semibold">Gut Reset</p>
-                  <p className="text-xs text-white/70">The Step Zero guide</p>
+                  <p className="text-xl font-semibold">Say Hello</p>
+                  <p className="text-xs text-white/70">Start on WhatsApp</p>
                 </div>
               </div>
             </AnimateOnScroll>
