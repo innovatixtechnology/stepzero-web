@@ -137,7 +137,7 @@ export default function Home() {
               </div>
             </AnimateOnScroll>
 
-            <AnimateOnScroll className="relative min-h-[470px] sm:min-h-[560px] order-1">
+            <AnimateOnScroll className="relative aspect-square sm:aspect-auto sm:min-h-[560px] order-1">
               <div className="absolute left-0 top-0 w-[82%] aspect-[3/2] overflow-hidden rounded-[28px] shadow-[0_24px_60px_rgba(44,44,44,0.12)]">
                 <Image src="/images/website/7a.jpg" alt="Palasha in a calm wellness setting" fill className="object-cover" sizes="(max-width: 1024px) 80vw, 560px" />
               </div>
@@ -230,7 +230,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: HOW IT WORKS */}
-      <section className="bg-[#252A26] py-20 md:py-28 overflow-hidden">
+      <section className="bg-[#252A26] pt-20 pb-14 md:py-28 overflow-hidden">
         <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
           <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-20 items-center">
             <AnimateOnScroll>
@@ -258,7 +258,7 @@ export default function Home() {
                 ))}
               </div>
               <AnimateOnScroll delay={220}>
-                <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-8 text-[#F0B429] text-sm font-bold hover:text-white transition-colors">Send a WhatsApp message <Arrow /></a>
+                <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 md:mt-8 text-[#F0B429] text-sm font-bold hover:text-white transition-colors">Send a WhatsApp message <Arrow /></a>
               </AnimateOnScroll>
             </div>
           </div>

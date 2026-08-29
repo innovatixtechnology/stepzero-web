@@ -54,7 +54,7 @@ export default function WorkWithMePage() {
               <p className="text-base text-[#3E453F]/65 leading-[1.75] mb-8">At Step Zero, every offering is built on one principle: your body is not a problem to be solved with a generic solution. Everything here is personalised, evidence-based, and designed to create lasting change—not just short-term results.</p>
               <Link href="/contact" className="inline-flex items-center rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors shadow-[0_12px_30px_rgba(240,180,41,.2)]">Find your starting point →</Link>
             </div>
-            <div className="order-1 lg:order-2 relative min-h-[430px] sm:min-h-[560px]">
+            <div className="order-1 lg:order-2 relative aspect-square sm:aspect-auto sm:min-h-[560px]">
               <div className="absolute right-0 top-0 w-[82%] aspect-[3/2] rounded-[28px] overflow-hidden shadow-[0_30px_70px_rgba(44,44,44,.13)]">
                 <Image src="/images/website/4.jpg" alt="Palasha preparing a personalised coaching plan" fill className="object-cover" preload sizes="(max-width:1024px) 82vw, 600px" />
               </div>
