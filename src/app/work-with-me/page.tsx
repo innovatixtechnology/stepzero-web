@@ -11,8 +11,8 @@ export const metadata: Metadata = {
 const programmes = [
   { name: "The Foundation Month", duration: "1 Month", focus: "Stabilize", line: "Calm the noise. Build your first real habits.", bestFor: "A low-commitment starting point, or a reset for past clients who’ve drifted and want to re-anchor before going deeper." },
   { name: "The Signature Programme", duration: "3 Months", focus: "Stabilize + Transform + Eat", line: "Your full foundation, rebuilt properly.", bestFor: "People ready to go deep and do it properly — this is the existing flagship offering." },
-  { name: "The Full Reset", duration: "6 Months", focus: "Complete S.T.E.P. + into Z.E.R.O.", line: "Not a quick fix. A full rebuild.", bestFor: "Hormonal imbalance, chronic gut issues, or long-standing patterns that need more runway than three months gives." },
-  { name: "The Optimal You Year", duration: "12 Months", focus: "Full S.T.E.P. → Z.E.R.O.", line: "A year to make Zero your normal.", bestFor: "Long-term lifestyle disease prevention, healthy ageing, or sustained, supported transformation." },
+  { name: "The Full Reset", duration: "6 Months", focus: "Stabilize + Transform + Rebuild", line: "Not a quick fix. A full rebuild.", bestFor: "Hormonal imbalance, chronic gut issues, or long-standing patterns that need more runway than three months gives." },
+  { name: "The Optimal You Year", duration: "12 Months", focus: "Stabilize + Transform + Sustain", line: "A year to make Zero your normal.", bestFor: "Long-term lifestyle disease prevention, healthy ageing, or sustained, supported transformation." },
 ];
 
 const framework = [
