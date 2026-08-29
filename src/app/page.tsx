@@ -144,10 +144,6 @@ export default function Home() {
               <div className="absolute right-0 bottom-0 w-[46%] aspect-[7/10] overflow-hidden rounded-[24px] border-[8px] border-[#FFFDFC] shadow-[0_20px_45px_rgba(44,44,44,0.15)]">
                 <Image src="/images/website/10.jpg" alt="Palasha with a nourishing breakfast" fill className="object-cover" sizes="(max-width: 1024px) 42vw, 280px" />
               </div>
-              <div className="absolute left-[8%] bottom-[8%] bg-[#6F9274] text-white rounded-2xl px-5 py-4 shadow-lg">
-                <p className="text-3xl font-semibold leading-none">01</p>
-                <p className="text-[10px] uppercase tracking-[0.14em] mt-2 text-white/75">Find the real start</p>
-              </div>
             </AnimateOnScroll>
           </div>
         </div>

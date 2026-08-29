@@ -108,16 +108,6 @@ export default function AboutPage() {
       {/* Section 5.4: The Turn */}
       <section className="bg-[#6F9274] py-20 md:py-28 relative overflow-hidden">
         <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full border border-white/15" />
-        <div className="absolute right-[7%] bottom-10 hidden md:block pointer-events-none select-none">
-          <div className="absolute inset-0 scale-125 rounded-full bg-[#F0B429]/10 blur-3xl" />
-          <Image
-            src="/images/brand/step-zero-transparent.png"
-            alt=""
-            width={300}
-            height={236}
-            className="relative w-[220px] lg:w-[270px] h-auto opacity-[0.16] mix-blend-multiply"
-          />
-        </div>
         <div className="relative max-w-[1200px] mx-auto px-5 sm:px-8 md:px-12">
           <div className="grid md:grid-cols-[0.9fr_1.1fr] gap-12 md:gap-20 items-start">
             <AnimateOnScroll>
