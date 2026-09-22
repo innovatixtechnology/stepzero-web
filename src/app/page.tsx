@@ -154,10 +154,11 @@ export default function Home() {
         <div className="absolute -right-24 -top-24 w-80 h-80 rounded-full border border-[#7A9E7E]/20" />
         <div className="absolute -right-8 -top-8 w-48 h-48 rounded-full border border-[#7A9E7E]/20" />
         <div className="relative max-w-[1400px] mx-auto px-5 sm:px-8 md:px-12 lg:px-16 xl:px-24">
-          <div className="grid md:grid-cols-[0.7fr_1.3fr] gap-10 md:gap-20 items-start">
+          <div className="grid md:grid-cols-[1fr_1.1fr] gap-10 md:gap-16 items-center">
             <AnimateOnScroll>
-              <p className="text-[11px] tracking-[0.18em] uppercase text-[#607E64] font-semibold mb-5">The foundation</p>
-              <p className="text-[88px] md:text-[132px] font-semibold leading-[0.75] text-[#7A9E7E]/25">00</p>
+              <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[28px] bg-[#F8F7F3] shadow-[0_24px_60px_rgba(44,44,44,0.12)]">
+                <Image src="/images/step-zero-ladder.png" alt="The Step Zero method: Step 0 Understand your symptoms, body and story — you are here; 1 Nourish, 2 Build, 3 Optimise, 4 Sustain" fill className="object-contain" sizes="(max-width: 768px) 90vw, 560px" />
+              </div>
             </AnimateOnScroll>
             <AnimateOnScroll delay={100}>
               <h2 className="text-3xl md:text-[46px] font-semibold text-[#252A26] mb-8">What is Step Zero?</h2>
