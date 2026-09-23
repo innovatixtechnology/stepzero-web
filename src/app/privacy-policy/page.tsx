@@ -66,7 +66,7 @@ export default function PrivacyPolicyPage() {
           <p>
             You have the right to access, correct, or delete your personal
             information. To exercise these rights, please contact us at
-            hello@stepzerowithpalasha.com.
+            <a href="mailto:palasha@stepzero.life" className="text-[#C17B5C] hover:underline">palasha@stepzero.life</a>.
           </p>
 
           <h2 className="font-[family-name:var(--font-playfair)] text-xl font-bold text-[#2C2C2C] mt-8">
