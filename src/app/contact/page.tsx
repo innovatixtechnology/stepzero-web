@@ -73,7 +73,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="grid sm:grid-cols-3 lg:grid-cols-1 gap-3 mt-5 max-w-[540px] mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-1 gap-3 mt-5 max-w-[540px] mx-auto">
               <a href="https://wa.aisensy.com/aabkw9" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-[#E7EFE7] p-5">
                 <div><p className="text-sm font-bold text-[#252A26]">WhatsApp</p><p className="text-xs text-[#3E453F]/55 mt-1">Start the conversation</p></div><span className="text-[#607E64] group-hover:translate-x-1 transition-transform">→</span>
               </a>
@@ -83,11 +83,14 @@ export default function ContactPage() {
               <a href="https://instagram.com/stepzero_with_palasha" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-2xl bg-white p-5">
                 <div><p className="text-sm font-bold text-[#252A26]">Instagram</p><p className="text-xs text-[#3E453F]/55 mt-1">@stepzero_with_palasha</p></div><span className="text-[#F0B429] group-hover:translate-x-1 transition-transform">→</span>
               </a>
+              <a href="mailto:palasha@stepzero.life" className="group flex items-center justify-between rounded-2xl bg-[#F8F3EB] p-5">
+                <div><p className="text-sm font-bold text-[#252A26]">Email</p><p className="text-xs text-[#3E453F]/55 mt-1 break-all">palasha@stepzero.life</p></div><span className="text-[#607E64] group-hover:translate-x-1 transition-transform">→</span>
+              </a>
             </div>
 
             <div className="mt-5 p-6 bg-[#252A26] text-white rounded-[22px] max-w-[540px] mx-auto">
               <p className="text-sm font-bold mb-2">Media & Collaboration</p>
-              <p className="text-sm text-white/60 leading-[1.7]">For podcasts, expert contributions, and aligned brand collaborations.</p>
+              <p className="text-sm text-white/60 leading-[1.7]">For podcasts, expert contributions, and aligned brand collaborations, write to <a href="mailto:palasha@stepzero.life" className="text-[#F0B429] hover:text-white transition-colors break-all">palasha@stepzero.life</a>.</p>
             </div>
           </div>
         </div>

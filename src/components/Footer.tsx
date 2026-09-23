@@ -49,7 +49,7 @@ export default function Footer() {
           {/* Column 3: Contact */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.14em] uppercase mb-6 text-white/40">Let&apos;s talk</h4>
-            <p className="text-sm text-white/70 mb-6 break-all">hello@stepzerowithpalasha.com</p>
+            <a href="mailto:palasha@stepzero.life" className="block text-sm text-white/70 hover:text-[#F0B429] transition-colors mb-6 break-all">palasha@stepzero.life</a>
             <Link href="/contact" className="inline-block bg-[#F0B429] text-[#252A26] text-sm font-bold px-6 py-3.5 rounded-full hover:bg-white transition-colors">Book a Clarity Call</Link>
           </div>
         </div>

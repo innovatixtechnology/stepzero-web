@@ -94,7 +94,7 @@ export default function TermsOfUsePage() {
           </h2>
           <p>
             If you have any questions about these Terms of Use, please contact
-            us at hello@stepzerowithpalasha.com.
+            us at <a href="mailto:palasha@stepzero.life" className="text-[#C17B5C] hover:underline">palasha@stepzero.life</a>.
           </p>
 
           <p className="text-sm text-[#2C2C2C]/60 mt-8">
