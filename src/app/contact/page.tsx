@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { submitForm } from "@/lib/submitForm";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({ name: "", email: "", location: "", topic: "", message: "" });
@@ -11,10 +12,19 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thank you for your message! We'll get back to you within 48 hours.");
-    setFormData({ name: "", email: "", location: "", topic: "", message: "" });
+    setStatus("sending");
+    try {
+      await submitForm({ form: "Contact", ...formData });
+      setStatus("idle");
+      alert("Thank you for your message! We'll get back to you within 48 hours.");
+      setFormData({ name: "", email: "", location: "", topic: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
 
   const fieldClass = "w-full border border-[#607E64]/25 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] bg-[#FFFDFC]";
@@ -58,7 +68,8 @@ export default function ContactPage() {
                 <label htmlFor="message" className="block text-sm font-semibold text-[#252A26] mb-2">Tell me a little about what you&apos;re dealing with</label>
                 <textarea id="message" name="message" required rows={5} value={formData.message} onChange={handleChange} className={`${fieldClass} resize-none`} />
               </div>
-              <button type="submit" className="w-full rounded-full bg-[#C17B5C] text-white text-sm font-bold px-7 py-4 hover:bg-[#a8694d] transition-colors">Send my message →</button>
+              <button type="submit" disabled={status === "sending"} className="w-full rounded-full bg-[#C17B5C] text-white text-sm font-bold px-7 py-4 hover:bg-[#a8694d] transition-colors disabled:opacity-60">{status === "sending" ? "Sending…" : "Send my message →"}</button>
+              {status === "error" && <p className="text-sm text-[#C17B5C]">Something went wrong. Please try again or reach us on WhatsApp.</p>}
             </form>
             <p className="text-xs text-[#607E64] mt-4">I typically respond within 48 hours on weekdays.</p>
           </div>

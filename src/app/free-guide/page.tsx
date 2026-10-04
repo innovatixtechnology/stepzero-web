@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { submitForm } from "@/lib/submitForm";
 
 const guideTopics = [
   "Your nervous system is in survival mode",
@@ -16,9 +17,17 @@ export default function FreeGuidePage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: "", email: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+    try {
+      await submitForm({ form: "FreeGuide", ...formData });
+      setSubmitted(true);
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -47,9 +56,10 @@ export default function FreeGuidePage() {
               <p className="text-base text-[#3E453F]/70 leading-[1.7] mb-6">Simple, practical foundations—without expensive supplements or a complete lifestyle overhaul.</p>
               {submitted ? (
                 <div className="bg-[#E7EFE7] rounded-2xl p-6">
-                  <p className="text-lg font-semibold text-[#607E64] mb-2">Thank you—your guide is on its way.</p>
-                  <p className="text-sm text-[#3E453F]/65">Check your email and spam folder within the next few minutes.</p>
-                  <Link href="/blog" className="inline-block mt-4 text-[#C17B5C] font-semibold text-sm">Read the blog →</Link>
+                  <p className="text-lg font-semibold text-[#607E64] mb-2">Thank you—your guide is ready.</p>
+                  <p className="text-sm text-[#3E453F]/65 mb-5">Download it below and keep it handy.</p>
+                  <a href="/guides/step-zero-gut-reset-guide.pdf" download="Step Zero Gut Reset Guide.pdf" className="inline-flex rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors">Download the guide ↓</a>
+                  <Link href="/blog" className="block mt-4 text-[#C17B5C] font-semibold text-sm">Read the blog →</Link>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -61,7 +71,8 @@ export default function FreeGuidePage() {
                     <label htmlFor="email" className="block text-sm font-semibold text-[#252A26] mb-2">Email</label>
                     <input type="email" id="email" name="email" required value={formData.email} onChange={(e) => setFormData((prev) => ({ ...prev, email: e.target.value }))} className="w-full border border-[#607E64]/30 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-[#F0B429] focus:ring-1 focus:ring-[#F0B429] bg-[#FFFDFC]" />
                   </div>
-                  <button type="submit" className="w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors">Send me the free guide →</button>
+                  <button type="submit" disabled={status === "sending"} className="w-full rounded-full bg-[#F0B429] text-[#252A26] text-sm font-bold px-7 py-4 hover:bg-[#dfa51d] transition-colors disabled:opacity-60">{status === "sending" ? "Sending…" : "Send me the free guide →"}</button>
+                  {status === "error" && <p className="text-sm text-[#C17B5C]">Something went wrong. Please try again.</p>}
                 </form>
               )}
             </div>
