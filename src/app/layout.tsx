@@ -19,9 +19,22 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || "localhost:3000"}`,
+  ),
+  applicationName: "Step Zero with Palasha",
   title: "Step Zero with Palasha",
   description:
     "Integrative health coaching that finds the root, and builds from there. Step Zero with Palasha.",
+  openGraph: {
+    siteName: "Step Zero with Palasha",
+    type: "website",
+    locale: "en_IN",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
